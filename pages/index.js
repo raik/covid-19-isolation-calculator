@@ -14,7 +14,6 @@ export default function Home() {
   const [closeContactType, setCloseContactType] = useState("");
   const [closeContactSymptoms, setCloseContactSymptoms] = useState();
   const [startDate, setStartDate] = useState(new Date());
-  const [endDate, setEndDate] = useState();
 
   const CustomDatePicker = forwardRef(({ value, onClick }, ref) => (
     <div className="flex space-x-5 items-center text-lg">
@@ -48,14 +47,6 @@ export default function Home() {
     </div>
   ));
 
-  useEffect(() => {
-    setEndDate(
-      add(startDate, {
-        days: 10,
-      })
-    );
-  }, [startDate]);
-
   return (
     <div className="w-full max-w-7xl mx-auto">
       <Head>
@@ -81,7 +72,7 @@ export default function Home() {
 
         {/* (1) First Step */}
         <div className="shadow-sm bg-white rounded-md py-8 px-4">
-          <h2 className="text-center text-2xl mb-4 text-blue-600">
+          <h2 className="text-center text-2xl mb-6 text-blue-600">
             Kas patsient on SARS-CoV2 positiivne või lähikontaktne?
           </h2>
 
@@ -102,7 +93,7 @@ export default function Home() {
               </span>{" "}
               POSITIIVNE
             </Button>
-            <span className="text-blue-700">või</span>
+            <span className="text-gray-400">või</span>
             <Button
               isActive={patientType === "close-contact"}
               isDisabled={patientType === "positive"}
@@ -122,7 +113,7 @@ export default function Home() {
             <>
               <hr className="my-12" />
               <div>
-                <h2 className="text-center text-2xl mb-4 text-blue-600">
+                <h2 className="text-center text-2xl mb-6 text-blue-600">
                   Kas patsiendil on sümptomid?
                 </h2>
                 <div className="flex justify-center space-x-5 items-center max-w-3xl mx-auto">
@@ -135,7 +126,7 @@ export default function Home() {
                   >
                     Sümptomaatiline
                   </Button>
-                  <span className="text-blue-700">või</span>
+                  <span className="text-gray-400">või</span>
                   <Button
                     isActive={symptomType === "asymptomatic"}
                     isDisabled={symptomType === "symptomatic"}
@@ -157,7 +148,7 @@ export default function Home() {
             <>
               <hr className="my-12" />
               <div>
-                <h2 className="text-center text-2xl mb-4 text-blue-600">
+                <h2 className="text-center text-2xl mb-6 text-blue-600">
                   Millal oli{" "}
                   <span className="underline">ilma sümptomiteta</span> SARS-CoV2
                   positiivse patsiendi testi tegemise päev?
@@ -172,12 +163,18 @@ export default function Home() {
                     customInput={<CustomDatePicker />}
                   />
                 </div>
-                <hr className="my-6" />
+                <hr className="my-6 border-none" />
                 <p className="text-lg text-center mb-8">
-                  <strong>Viimane isolatsioonipäev *</strong> on patsiendile{" "}
+                  Viimane isolatsioonipäev* on patsiendile <br />
+                  <span className="text-gray-500">[ ??? ]</span>
                   <br />
                   <span className="text-red-500 font-bold inline-block text-2xl border-b-2 border-red-400">
-                    {format(endDate, "dd.MM.yyyy")}
+                    {format(
+                      add(startDate, {
+                        days: 10,
+                      }),
+                      "dd.MM.yyyy"
+                    )}
                   </span>
                 </p>
                 <p>
@@ -200,7 +197,7 @@ export default function Home() {
             <>
               <hr className="my-12" />
               <div>
-                <h2 className="text-center text-2xl mb-4 text-blue-600">
+                <h2 className="text-center text-2xl mb-6 text-blue-600">
                   Millal oli <span className="underline">sümptomaatilise</span>{" "}
                   SARS-CoV2 patsiendi sümptomite tekke kuupäev?
                 </h2>
@@ -214,12 +211,20 @@ export default function Home() {
                     customInput={<CustomDatePicker />}
                   />
                 </div>
-                <hr className="my-6" />
+                <hr className="my-6 border-none" />
                 <p className="text-lg text-center mb-8">
-                  <strong>Viimane isolatsioonipäev *</strong> (10 päeva
-                  sümptomite tekkest) on patsiendile <br />
+                  Viimane isolatsioonipäev* on patsiendile <br />
+                  <span className="text-gray-500">
+                    (10 päeva peale sümptomite teket)
+                  </span>
+                  <br />
                   <span className="text-red-500 font-bold inline-block text-2xl border-b-2 border-red-400">
-                    {format(endDate, "dd.MM.yyyy")}
+                    {format(
+                      add(startDate, {
+                        days: 10,
+                      }),
+                      "dd.MM.yyyy"
+                    )}
                   </span>
                 </p>
                 <p>
@@ -236,31 +241,43 @@ export default function Home() {
           {/* (2) Close Contact */}
           {patientType === "close-contact" ? (
             <div>
-              <h2 className="text-center text-2xl font-bold mb-4">
-                SARS-CoV2 LÄHIKONTAKTNE
+              <hr className="my-12" />
+              <h2 className="text-center text-2xl mb-6 text-blue-600">
+                Kas lähikontaktne elab SARS-CoV2 positiivsega samas
+                majapidamises?
               </h2>
               <div className="flex justify-center space-x-5 items-center max-w-3xl mx-auto">
-                <Button
-                  isActive={closeContactType === "active"}
-                  isDisabled={closeContactType === "inactive"}
-                  handleClick={() => {
-                    setCloseContactType("active");
-                  }}
-                >
-                  Elab SARS-CoV2 positiivsega samas majapidamises
-                </Button>
-                (Kokkupuude haigega on pidev ja igapäevane)
-                <span className="text-blue-700">või</span>
-                <Button
-                  isActive={closeContactType === "inactive"}
-                  isDisabled={closeContactType === "active"}
-                  handleClick={() => {
-                    setCloseContactType("inactive");
-                  }}
-                >
-                  Ei ela SARS-CoV2 positiivsega samas majapidamises
-                </Button>
-                (Kokkupuude haigega on olnud lühiaegne)
+                <div>
+                  <Button
+                    className="mb-2"
+                    isActive={closeContactType === "active"}
+                    isDisabled={closeContactType === "inactive"}
+                    handleClick={() => {
+                      setCloseContactType("active");
+                    }}
+                  >
+                    Jah
+                  </Button>
+                  <p className="text-sm text-gray-600 leading-none px-4">
+                    Kokkupuude haigega on pidev ja igapäevane
+                  </p>
+                </div>
+                <span className="text-gray-400">või</span>
+                <div>
+                  <Button
+                    className="mb-2"
+                    isActive={closeContactType === "inactive"}
+                    isDisabled={closeContactType === "active"}
+                    handleClick={() => {
+                      setCloseContactType("inactive");
+                    }}
+                  >
+                    Ei
+                  </Button>
+                  <p className="text-sm text-gray-600 leading-none px-4">
+                    Kokkupuude haigega on olnud lühiaegne
+                  </p>
+                </div>
               </div>
             </div>
           ) : (
@@ -270,13 +287,13 @@ export default function Home() {
           {/* (2.1a) Close Contact and in active contact */}
           {patientType === "close-contact" && closeContactType === "active" ? (
             <div>
-              <h2 className="text-center text-2xl font-bold mb-4">
-                SARS-CoV2 LÄHIKONTAKTNE
+              <hr className="my-12" />
+              <h2 className="text-center text-2xl mb-6 text-blue-600">
+                Kas <span class="underline">samas majapidamises</span> elaval
+                SARS-CoV2 <span class="underline">positiivsel</span> esinevad
+                haigussümptomid?
               </h2>
-              <p>
-                SARS-CoV2 LÄHIKONTAKTNE. KODUNE KONTAKT. KAS SAMAS MAJAPIDAMISES
-                ELAVAL SARS-CoV POSITIIVSEL ESINEVAD HAIGUSSÜMPTOMID?
-              </p>
+
               <div className="flex justify-center space-x-5 items-center max-w-3xl mx-auto">
                 <Button
                   isActive={closeContactSymptoms === true}
@@ -288,7 +305,7 @@ export default function Home() {
                   Jah
                 </Button>
 
-                <span className="text-blue-700">või</span>
+                <span className="text-gray-400">või</span>
                 <Button
                   isActive={closeContactSymptoms === false}
                   isDisabled={closeContactSymptoms === true}
@@ -309,26 +326,62 @@ export default function Home() {
           closeContactType === "active" &&
           closeContactSymptoms === true ? (
             <div>
-              <h2 className="text-center text-2xl font-bold mb-4">
-                SARS-CoV2 LÄHIKONTAKTNE
+              <hr className="my-12" />
+              <h2 className="text-center text-2xl mb-6 text-blue-600">
+                Mis kuupäeval SARS-CoV2 positiivsel sümptomid tekkisid?
               </h2>
-              <p>
-                SARS-CoV2 LÄHIKONTAKTNE. KODUNE KONTAKT SÜMPTOMAATILISE HAIGEGA.
-                MIS KUUPÄEVAL SARS-CoV2 POSITIIVSEL SÜMPTOMID TEKKISID?
+              <div className="text-center mb-8">
+                <DatePicker
+                  id="datepicker"
+                  selected={startDate}
+                  onChange={(date) => setStartDate(date)}
+                  dateFormat="dd.MM.yyyy"
+                  locale="et"
+                  customInput={<CustomDatePicker />}
+                />
+              </div>
+              <hr className="my-6 border-none" />
+
+              <p className="text-lg text-center mb-8">
+                Esimene võimalus lähikontaktsele SARS-CoV2 testi teha, et
+                isolatsiooni lühendada* <br />
+                <span className="text-gray-500">
+                  (10 päeva peale sümptomite teket)
+                </span>
+                :
+                <br />
+                <span className="text-red-500 font-bold inline-block text-2xl border-b-2 border-red-400">
+                  {format(
+                    add(startDate, {
+                      days: 10,
+                    }),
+                    "dd.MM.yyyy"
+                  )}
+                </span>
               </p>
-              <p>[Datepicker]</p>
-              <p>
-                ESIMENE VÕIMALUS LÄHIKONTAKTSELE SARS-CoV2 TESTI TEHA, ET
-                ISOLATSIOONI LÜHENDADA*: [VASTUS]
+
+              <p className="text-lg text-center mb-8">
+                Viimane isolatsioonipäev lähikontaktsele, kui testi ei tehta ja
+                sümptomeid ei teki:
+                <br />
+                <span className="text-gray-500">
+                  (14 päeva peale kontaktis olemist)
+                </span>
+                <br />
+                <span className="text-red-500 font-bold inline-block text-2xl border-b-2 border-red-400">
+                  {format(
+                    add(startDate, {
+                      days: 14,
+                    }),
+                    "dd.MM.yyyy"
+                  )}
+                </span>
               </p>
+
               <p>
-                VIIMANE ISOLATSIOONIPÄEV LÄHIKONTAKTSELE, KUI TESTI EI TEHTA JA
-                SÜMPTOMEID EI TEKI:: [VASTUS]
-              </p>
-              <p>
-                *KUI TEHTUD SARS-CoV2 TEST OSUTUB POSITIIVSEKS, ALGAB
-                ISOLATSIOON TESTI TEGEMISE PÄEVAST ALGUSEST PEALE NING KESTAB 10
-                PÄEVA.
+                * Kui tehtud SARS-CoV2 test osutub positiivseks, algab
+                isolatsioon testi tegemise päevast algusest peale ning kestab 10
+                päeva.
               </p>
             </div>
           ) : (
@@ -340,26 +393,63 @@ export default function Home() {
           closeContactType === "active" &&
           closeContactSymptoms === false ? (
             <div>
-              <h2 className="text-center text-2xl font-bold mb-4">
-                SARS-CoV2 LÄHIKONTAKTNE
+              <hr className="my-12" />
+              <h2 className="text-center text-2xl mb-6 text-blue-600">
+                Mis kuupäeval SARS-CoV2 positiivne testi tegi?
               </h2>
-              <p>
-                SARS-CoV2 LÄHIKONTAKTNE. KODUNE KONTAKT SÜMPTOMAATILISE HAIGEGA.
-                MIS KUUPÄEVAL SARS-CoV2 POSITIIVNE TESTI TEGI?
+
+              <div className="text-center mb-8">
+                <DatePicker
+                  id="datepicker"
+                  selected={startDate}
+                  onChange={(date) => setStartDate(date)}
+                  dateFormat="dd.MM.yyyy"
+                  locale="et"
+                  customInput={<CustomDatePicker />}
+                />
+              </div>
+              <hr className="my-6 border-none" />
+
+              <p className="text-lg text-center mb-8">
+                Esimene võimalus lähikontaktsele SARS-CoV2 testi teha, et
+                isolatsiooni lühendada* <br />
+                <span className="text-gray-500">
+                  (10 päeva peale sümptomite teket)
+                </span>
+                :
+                <br />
+                <span className="text-red-500 font-bold inline-block text-2xl border-b-2 border-red-400">
+                  {format(
+                    add(startDate, {
+                      days: 10,
+                    }),
+                    "dd.MM.yyyy"
+                  )}
+                </span>
               </p>
-              <p>[Datepicker]</p>
-              <p>
-                ESIMENE VÕIMALUS LÄHIKONTAKTSELE SARS-CoV2 TESTI TEHA, ET
-                ISOLATSIOONI LÜHENDADA*: [VASTUS]
+
+              <p className="text-lg text-center mb-8">
+                Viimane isolatsioonipäev lähikontaktsele, kui testi ei tehta ja
+                sümptomeid ei teki:
+                <br />
+                <span className="text-gray-500">
+                  (14 päeva peale kontaktis olemist)
+                </span>
+                <br />
+                <span className="text-red-500 font-bold inline-block text-2xl border-b-2 border-red-400">
+                  {format(
+                    add(startDate, {
+                      days: 14,
+                    }),
+                    "dd.MM.yyyy"
+                  )}
+                </span>
               </p>
+
               <p>
-                VIIMANE ISOLATSIOONIPÄEV LÄHIKONTAKTSELE, KUI TESTI EI TEHTA JA
-                SÜMPTOMEID EI TEKI:: [VASTUS]
-              </p>
-              <p>
-                *KUI TEHTUD SARS-CoV2 TEST OSUTUB POSITIIVSEKS, ALGAB
-                ISOLATSIOON TESTI TEGEMISE PÄEVAST ALGUSEST PEALE NING KESTAB 10
-                PÄEVA.
+                * Kui tehtud SARS-CoV2 test osutub positiivseks, algab
+                isolatsioon testi tegemise päevast algusest peale ning kestab 10
+                päeva.
               </p>
             </div>
           ) : (
@@ -370,26 +460,62 @@ export default function Home() {
           {patientType === "close-contact" &&
           closeContactType === "inactive" ? (
             <div>
-              <h2 className="text-center text-2xl font-bold mb-4">
-                SARS-CoV2 LÄHIKONTAKTNE
+              <hr className="my-12" />
+              <h2 className="text-center text-2xl mb-6 text-blue-600">
+                Mis kuupäeval lähikontaktne SARS-CoV2 positiivsega kokku puutus?
               </h2>
-              <p>
-                SARS-CoV2 LÄHIKONTAKTNE. ÜKSIKKONTAKT. MIS KUUPÄEVAL SARS-CoV2
-                POSITIIVSEGA VIIMATI KOKKU PUUTUTI?
+              <div className="text-center mb-8">
+                <DatePicker
+                  id="datepicker"
+                  selected={startDate}
+                  onChange={(date) => setStartDate(date)}
+                  dateFormat="dd.MM.yyyy"
+                  locale="et"
+                  customInput={<CustomDatePicker />}
+                />
+              </div>
+              <hr className="my-6 border-none" />
+
+              <p className="text-lg text-center mb-8">
+                Esimene võimalus lähikontaktsele SARS-CoV2 testi teha, et
+                isolatsiooni lühendada* <br />
+                <span className="text-gray-500">
+                  (10 päeva peale sümptomite teket)
+                </span>
+                :
+                <br />
+                <span className="text-red-500 font-bold inline-block text-2xl border-b-2 border-red-400">
+                  {format(
+                    add(startDate, {
+                      days: 10,
+                    }),
+                    "dd.MM.yyyy"
+                  )}
+                </span>
               </p>
-              <p>[Datepicker]</p>
-              <p>
-                ESIMENE VÕIMALUS LÄHIKONTAKTSELE SARS-CoV2 TESTI TEHA, ET
-                ISOLATSIOONI LÜHENDADA*: [VASTUS]
+
+              <p className="text-lg text-center mb-8">
+                Viimane isolatsioonipäev lähikontaktsele, kui testi ei tehta ja
+                sümptomeid ei teki:
+                <br />
+                <span className="text-gray-500">
+                  (14 päeva peale kontaktis olemist)
+                </span>
+                <br />
+                <span className="text-red-500 font-bold inline-block text-2xl border-b-2 border-red-400">
+                  {format(
+                    add(startDate, {
+                      days: 14,
+                    }),
+                    "dd.MM.yyyy"
+                  )}
+                </span>
               </p>
+
               <p>
-                VIIMANE ISOLATSIOONIPÄEV LÄHIKONTAKTSELE, KUI TESTI EI TEHTA JA
-                SÜMPTOMEID EI TEKI:: [VASTUS]
-              </p>
-              <p>
-                *KUI TEHTUD SARS-CoV2 TEST OSUTUB POSITIIVSEKS, ALGAB
-                ISOLATSIOON TESTI TEGEMISE PÄEVAST ALGUSEST PEALE NING KESTAB 10
-                PÄEVA.
+                * Kui tehtud SARS-CoV2 test osutub positiivseks, algab
+                isolatsioon testi tegemise päevast algusest peale ning kestab 10
+                päeva.
               </p>
             </div>
           ) : (
