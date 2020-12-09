@@ -29,6 +29,13 @@ export default class MyDocument extends Document {
         <body>
           <Main />
           <NextScript />
+          {/* Cloudflare Web Analytics */}
+          <script
+            defer
+            src="https://static.cloudflareinsights.com/beacon.min.js"
+            data-cf-beacon='{"token": "2d0bacde6eba4c3c83a07ea4b7945d63"}'
+          ></script>
+          {/* End Cloudflare Web Analytics */}
         </body>
       </Html>
     );
