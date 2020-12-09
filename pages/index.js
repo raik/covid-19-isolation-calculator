@@ -343,10 +343,10 @@ export default function Home() {
               <hr className="my-6 border-none" />
 
               <p className="text-lg text-center mb-8">
-                Esimene võimalus lähikontaktsele SARS-CoV2 testi teha, et
+                Esimene võimalus ilma sümptomiteta lähikontaktsele SARS-CoV2 testi teha, et
                 isolatsiooni lühendada* <br />
                 <span className="text-gray-500">
-                  (Esimesest kontaktist on möödas vähemalt 10. päeva - samas majapidamises elavate inimeste puhul on esimene kontakt tavaliselt COVID-19 haige esimene sümptomipäev. Kokkupuute päeva loetakse päevaks 0)
+                  (Vähemalt 10 päeva möödas esimesest kontaktist - samas majapidamises elavate inimeste puhul on esimene kontakt tavaliselt COVID-19 haige esimene sümptomipäev. Esimest kontaktipäeva loetakse päevaks 0)
                 </span>
                 :
                 <br />
@@ -364,7 +364,7 @@ export default function Home() {
                 Viimane isolatsioonipäev lähikontaktsele, kui testi ei tehta ja patsiendil sümptomeid ei ole tekkinud:
                 <br />
                 <span className="text-gray-500">
-                  (Esimesest kontaktist on möödas vähemalt 14 päeva - samas majapidamises elavate inimeste puhul on esimene kontakt tavaliselt COVID-19 haige esimene sümptomipäev. Kokkupuute päeva loetakse päevaks 0)
+                  (Vähemalt 14 päeva möödas esimesest kontaktist - samas majapidamises elavate inimeste puhul on esimene kontakt tavaliselt COVID-19 haige esimene sümptomipäev. Esimest kontaktipäeva loetakse päevaks 0)
                 </span>
                 <br />
                 <span className="text-red-500 font-bold inline-block text-2xl border-b-2 border-red-400">
@@ -428,7 +428,7 @@ export default function Home() {
               </p>
 
               <p className="text-lg text-center mb-8">
-                Viimane isolatsioonipäev lähikontaktsele, kui testi ei tehta ja patsiendil sümptomeid ei ole tekkinud:
+                Viimane isolatsioonipäev lähikontaktsele, kui testi ei tehta ja sümptomeid ei ole tekkinud:
                 <br />
                 <span className="text-gray-500">
                   (Lähikontaktsega koos elava asümptomaatilise SARS-CoV2 positiivse testi tegemisest on möödas 14 päeva. Testi tegemise päeva loetakse päevaks 0.)
@@ -475,10 +475,10 @@ export default function Home() {
               <hr className="my-6 border-none" />
 
               <p className="text-lg text-center mb-8">
-                Esimene võimalus lähikontaktsele SARS-CoV2 testi teha, et
+                Esimene võimalus ilma sümptomiteta lähikontaktsele SARS-CoV2 testi teha, et
                 isolatsiooni lühendada* <br />
                 <span className="text-gray-500">
-                  (Viimasest SARS-CoV2 positiivsega kontaktist on möödas vähemalt 10 päeva. Viimast kontaktipäeva loetakse päevaks 0.)
+                  (10 päeva alates viimasest kontaktist. Viimast kontaktipäeva loetakse päevaks 0.)
                 </span>
                 :
                 <br />
@@ -493,10 +493,10 @@ export default function Home() {
               </p>
 
               <p className="text-lg text-center mb-8">
-               Viimane isolatsioonipäev lähikontaktsele, kui testi ei tehta ja patsiendil sümptomeid ei ole tekkinud:
+               Viimane isolatsioonipäev lähikontaktsele, kui testi ei tehta ja sümptomeid ei ole tekkinud:
                 <br />
                 <span className="text-gray-500">
-                  (Viimasest SARS-CoV2 positiivsega kontaktist on möödas vähemalt 14 päeva. Viimast kontaktipäeva loetakse päevaks 0.)
+                  (14 päeva alates viimasest kontaktist. Viimast kontaktipäeva loetakse päevaks 0.)
                 </span>
                 <br />
                 <span className="text-red-500 font-bold inline-block text-2xl border-b-2 border-red-400">
