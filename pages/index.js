@@ -174,8 +174,8 @@ export default function Home() {
                 </div>
                 <hr className="my-6" />
                 <p className="text-lg text-center mb-8">
-                  <strong>Viimane isolatsioonipäev *</strong> (10 päeva
-                  sümptomite tekkest) on patsiendile <br />
+                  <strong>Viimane isolatsioonipäev *</strong> on patsiendile{" "}
+                  <br />
                   <span className="text-red-500 font-bold inline-block text-2xl border-b-2 border-red-400">
                     {format(endDate, "dd.MM.yyyy")}
                   </span>
