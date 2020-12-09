@@ -176,10 +176,10 @@ export default function Home() {
                       "dd.MM.yyyy"
                     )}
                   </span>
-                </p>
+                
  <span className="text-gray-500">[ Kui haigusnähte pole ilmnenud, lõpetatakse isolatsioon 10 päeva möödumisel alates positiivsest testist. Testi tegemise päeva loetakse päevaks 0. ]</span>
                   <br />
-                <p>
+               </p> <p>
                   * Isolatsiooni võib lõpetada ainult siis, kui sümptomeid ei
                   ole tekkinud.{" "}
                   <strong>
