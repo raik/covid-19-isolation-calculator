@@ -76,7 +76,7 @@ export default function Home() {
             Kas patsient on SARS-CoV2 positiivne või lähikontaktne?
           </h2>
 
-          <div className="flex justify-center space-x-5 items-center max-w-3xl mx-auto mb-12">
+          <div className="flex flex-col md:flex-row justify-center md:space-x-5 items-center max-w-3xl mx-auto mb-12">
             <Button
               isActive={patientType === "positive"}
               isDisabled={patientType === "close-contact"}
@@ -116,7 +116,7 @@ export default function Home() {
                 <h2 className="text-center text-2xl mb-6 text-blue-600">
                   Kas patsiendil on sümptomid?
                 </h2>
-                <div className="flex justify-center space-x-5 items-center max-w-3xl mx-auto">
+                <div className="flex flex-col md:flex-row justify-center md:space-x-5 items-center max-w-3xl mx-auto mb-12">
                   <Button
                     isActive={symptomType === "symptomatic"}
                     isDisabled={symptomType === "asymptomatic"}
@@ -246,7 +246,7 @@ export default function Home() {
                 Kas lähikontaktne elab SARS-CoV2 positiivsega samas
                 majapidamises?
               </h2>
-              <div className="flex justify-center space-x-5 items-center max-w-3xl mx-auto">
+              <div className="flex flex-col md:flex-row justify-center md:space-x-5 items-center max-w-3xl mx-auto mb-12">
                 <div>
                   <Button
                     className="mb-2"
@@ -294,7 +294,7 @@ export default function Home() {
                 haigussümptomid?
               </h2>
 
-              <div className="flex justify-center space-x-5 items-center max-w-3xl mx-auto">
+              <div className="flex flex-col md:flex-row justify-center md:space-x-5 items-center max-w-3xl mx-auto mb-12">
                 <Button
                   isActive={closeContactSymptoms === true}
                   isDisabled={closeContactSymptoms === false}
