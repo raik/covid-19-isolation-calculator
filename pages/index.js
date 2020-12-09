@@ -55,7 +55,7 @@ export default function Home() {
 
       <main className="max-w-6xl mx-auto px-8 py-12">
         <h1 className="text-4xl text-center font-bold leading-none mb-8">
-          Covid-19
+          SARS-CoV2
           <br />
           <span className="text-blue-600 uppercase text-2xl">
             isolatsioonikalkulaator
@@ -63,7 +63,7 @@ export default function Home() {
         </h1>
         <div className="prose prose-xl max-w-none mb-12 text-center leading-normal">
           <p>
-            Kalkulaator on abistav vahend arvutamaks välja esimesed võimalikud
+            Kalkulaator on abistav vahend, et arvutada välja esimesed võimalikud
             isolatsiooni lõpetamise kuupäevad. Isolatsiooni lõpetamiseks peavad
             olema lisaks täidetud kõik Terviseameti poolt kinnitatud kehtivad
             kriteeriumid.
@@ -73,7 +73,7 @@ export default function Home() {
         {/* (1) First Step */}
         <div className="shadow-sm bg-white rounded-md py-8 px-4">
           <h2 className="text-center text-2xl mb-6 text-blue-600">
-            Kas patsient on SARS-CoV2 positiivne või lähikontaktne?
+            Kas patsient on SARS-CoV2 positiivne või SARS-CoV2 positiivse lähikontaktne?
           </h2>
 
           <div className="flex flex-col md:flex-row justify-center md:space-x-5 items-center max-w-3xl mx-auto mb-12">
@@ -114,7 +114,7 @@ export default function Home() {
               <hr className="my-12" />
               <div>
                 <h2 className="text-center text-2xl mb-6 text-blue-600">
-                  Kas patsiendil on sümptomid?
+                  Kas patsiendil esinevad sümptomid?
                 </h2>
                 <div className="flex flex-col md:flex-row justify-center md:space-x-5 items-center max-w-3xl mx-auto mb-12">
                   <Button
@@ -124,7 +124,7 @@ export default function Home() {
                       setSymptomType("symptomatic");
                     }}
                   >
-                    Sümptomaatiline
+                    JAH
                   </Button>
                   <span className="text-gray-400">või</span>
                   <Button
@@ -134,7 +134,7 @@ export default function Home() {
                       setSymptomType("asymptomatic");
                     }}
                   >
-                    Ilma sümptomiteta
+                    EI
                   </Button>
                 </div>
               </div>
@@ -151,7 +151,7 @@ export default function Home() {
                 <h2 className="text-center text-2xl mb-6 text-blue-600">
                   Millal oli{" "}
                   <span className="underline">ilma sümptomiteta</span> SARS-CoV2
-                  positiivse patsiendi testi tegemise päev?
+                  positiivse patsiendi testi tegemise kuupäev?
                 </h2>
                 <div className="text-center mb-8">
                   <DatePicker
@@ -166,7 +166,7 @@ export default function Home() {
                 <hr className="my-6 border-none" />
                 <p className="text-lg text-center mb-8">
                   Viimane isolatsioonipäev* on patsiendile <br />
-                  <span className="text-gray-500">[ ??? ]</span>
+                  <span className="text-gray-500">[ Kui haigusnähte pole ilmnenud, lõpetatakse isolatsioon 10 päeva möödumisel alates positiivsest testist. Testi tegemise päeva loetakse päevaks 0. ]</span>
                   <br />
                   <span className="text-red-500 font-bold inline-block text-2xl border-b-2 border-red-400">
                     {format(
@@ -199,7 +199,7 @@ export default function Home() {
               <div>
                 <h2 className="text-center text-2xl mb-6 text-blue-600">
                   Millal oli <span className="underline">sümptomaatilise</span>{" "}
-                  SARS-CoV2 patsiendi sümptomite tekke kuupäev?
+                  SARS-CoV2 patsiendi esimeste sümptomite tekkimise kuupäev?
                 </h2>
                 <div className="text-center mb-8">
                   <DatePicker
@@ -215,7 +215,7 @@ export default function Home() {
                 <p className="text-lg text-center mb-8">
                   Viimane isolatsioonipäev* on patsiendile <br />
                   <span className="text-gray-500">
-                    (10 päeva peale sümptomite teket)
+                    (COVID-19-le iseloomulike sümptomite algusest on möödunud vähemalt 10 päeva. Sümptomite tekkepäev on päev 0.)
                   </span>
                   <br />
                   <span className="text-red-500 font-bold inline-block text-2xl border-b-2 border-red-400">
@@ -228,9 +228,9 @@ export default function Home() {
                   </span>
                 </p>
                 <p>
-                  * Isolatsiooni võib lõpetada ainult siis, kui viimasest
+                  * Isolatsiooni võib lõpetada ainult siis, kui lisaks ajalistele kriteeriumitele on viimasest
                   palavikust on möödas 72 tundi ja ägedad sümptomid on
-                  taandunud.
+                  taandunud. 
                 </p>
               </div>
             </>
@@ -328,7 +328,7 @@ export default function Home() {
             <div>
               <hr className="my-12" />
               <h2 className="text-center text-2xl mb-6 text-blue-600">
-                Mis kuupäeval SARS-CoV2 positiivsel sümptomid tekkisid?
+                Mis kuupäeval tekkisid lähikontaktsega koos elaval SARS-CoV2 positiivsel esimesed sümptomid?
               </h2>
               <div className="text-center mb-8">
                 <DatePicker
@@ -346,7 +346,7 @@ export default function Home() {
                 Esimene võimalus lähikontaktsele SARS-CoV2 testi teha, et
                 isolatsiooni lühendada* <br />
                 <span className="text-gray-500">
-                  (10 päeva peale sümptomite teket)
+                  (Esimesest kontaktist on möödas vähemalt 10. päeva - samas majapidamises elavate inimeste puhul on esimene kontakt tavaliselt COVID-19 haige esimene sümptomipäev. Kokkupuute päeva loetakse päevaks 0)
                 </span>
                 :
                 <br />
@@ -361,11 +361,10 @@ export default function Home() {
               </p>
 
               <p className="text-lg text-center mb-8">
-                Viimane isolatsioonipäev lähikontaktsele, kui testi ei tehta ja
-                sümptomeid ei teki:
+                Viimane isolatsioonipäev lähikontaktsele, kui testi ei tehta ja patsiendil sümptomeid ei ole tekkinud:
                 <br />
                 <span className="text-gray-500">
-                  (14 päeva peale kontaktis olemist)
+                  (Esimesest kontaktist on möödas vähemalt 14 päeva - samas majapidamises elavate inimeste puhul on esimene kontakt tavaliselt COVID-19 haige esimene sümptomipäev. Kokkupuute päeva loetakse päevaks 0)
                 </span>
                 <br />
                 <span className="text-red-500 font-bold inline-block text-2xl border-b-2 border-red-400">
@@ -395,7 +394,7 @@ export default function Home() {
             <div>
               <hr className="my-12" />
               <h2 className="text-center text-2xl mb-6 text-blue-600">
-                Mis kuupäeval SARS-CoV2 positiivne testi tegi?
+                Mis kuupäeval lähikontaktsega koos elav asümptomaatiline SARS-CoV2 positiivne testi tegi?
               </h2>
 
               <div className="text-center mb-8">
@@ -414,7 +413,7 @@ export default function Home() {
                 Esimene võimalus lähikontaktsele SARS-CoV2 testi teha, et
                 isolatsiooni lühendada* <br />
                 <span className="text-gray-500">
-                  (10 päeva peale sümptomite teket)
+                  (Lähikontaktsega koos elava SARS-CoV2 positiivse testi tegemisest on möödas vähemalt 10 päeva. Testi tegemise päeva loetakse päevaks 0)
                 </span>
                 :
                 <br />
@@ -429,11 +428,10 @@ export default function Home() {
               </p>
 
               <p className="text-lg text-center mb-8">
-                Viimane isolatsioonipäev lähikontaktsele, kui testi ei tehta ja
-                sümptomeid ei teki:
+                Viimane isolatsioonipäev lähikontaktsele, kui testi ei tehta ja patsiendil sümptomeid ei ole tekkinud:
                 <br />
                 <span className="text-gray-500">
-                  (14 päeva peale kontaktis olemist)
+                  (Lähikontaktsega koos elava asümptomaatilise SARS-CoV2 positiivse testi tegemisest on möödas 14 päeva. Testi tegemise päeva loetakse päevaks 0.)
                 </span>
                 <br />
                 <span className="text-red-500 font-bold inline-block text-2xl border-b-2 border-red-400">
@@ -462,7 +460,7 @@ export default function Home() {
             <div>
               <hr className="my-12" />
               <h2 className="text-center text-2xl mb-6 text-blue-600">
-                Mis kuupäeval lähikontaktne SARS-CoV2 positiivsega kokku puutus?
+                Mis kuupäeval lähikontaktne viimast korda SARS-CoV2 positiivsega kokku puutus?
               </h2>
               <div className="text-center mb-8">
                 <DatePicker
@@ -480,7 +478,7 @@ export default function Home() {
                 Esimene võimalus lähikontaktsele SARS-CoV2 testi teha, et
                 isolatsiooni lühendada* <br />
                 <span className="text-gray-500">
-                  (10 päeva peale sümptomite teket)
+                  (Viimasest SARS-CoV2 positiivsega kontaktist on möödas vähemalt 10 päeva. Viimast kontaktipäeva loetakse päevaks 0.)
                 </span>
                 :
                 <br />
@@ -495,11 +493,10 @@ export default function Home() {
               </p>
 
               <p className="text-lg text-center mb-8">
-                Viimane isolatsioonipäev lähikontaktsele, kui testi ei tehta ja
-                sümptomeid ei teki:
+               Viimane isolatsioonipäev lähikontaktsele, kui testi ei tehta ja patsiendil sümptomeid ei ole tekkinud:
                 <br />
                 <span className="text-gray-500">
-                  (14 päeva peale kontaktis olemist)
+                  (Viimasest SARS-CoV2 positiivsega kontaktist on möödas vähemalt 14 päeva. Viimast kontaktipäeva loetakse päevaks 0.)
                 </span>
                 <br />
                 <span className="text-red-500 font-bold inline-block text-2xl border-b-2 border-red-400">
