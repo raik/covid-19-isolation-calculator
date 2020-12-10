@@ -55,10 +55,10 @@ export default function Home() {
 
       <main className="max-w-6xl mx-auto px-8 py-12">
         <h1 className="text-4xl text-center font-bold leading-none mb-8">
-          SARS-CoV2
+        Eesti Perearstide Seltsi
           <br />
           <span className="text-blue-600 uppercase text-2xl">
-            isolatsioonikalkulaator
+           SARS-CoV2 isolatsioonikalkulaator
           </span>
         </h1>
         <div className="prose prose-xl max-w-none mb-12 text-center leading-normal">
@@ -178,7 +178,7 @@ export default function Home() {
                   </span>
                 
  <span className="text-gray-500">[ Kui haigusnähte pole ilmnenud, lõpetatakse isolatsioon 10 päeva möödumisel alates positiivsest testist. Testi tegemise päeva loetakse päevaks 0. ]</span>
-                  <br />
+                  <br /> <br>
                </p> <p>
                   * Isolatsiooni võib lõpetada ainult siis, kui sümptomeid ei
                   ole tekkinud.{" "}
