@@ -215,10 +215,7 @@ export default function Home() {
                 <hr className="my-6 border-none" />
                 <p className="text-lg text-center mb-8">
                   Viimane isolatsioonipäev* on patsiendile <br />
-                  <span className="text-gray-500">
-                    (COVID-19-le iseloomulike sümptomite algusest on möödunud vähemalt 10 päeva. Sümptomite tekkepäev on päev 0.)
-                  </span>
-                  <br />
+                  
                   <span className="text-red-500 font-bold inline-block text-2xl border-b-2 border-red-400">
                     {format(
                       add(startDate, {
@@ -227,7 +224,11 @@ export default function Home() {
                       "dd.MM.yyyy"
                     )}
                   </span>
-                </p>
+                </p> <br />
+<span className="text-gray-500">
+                    (COVID-19-le iseloomulike sümptomite algusest on möödunud vähemalt 10 päeva. Sümptomite tekkepäev on päev 0.)
+                  </span>
+                  <br />
                 <p>
                   * Isolatsiooni võib lõpetada ainult siis, kui lisaks ajalistele kriteeriumitele on viimasest
                   palavikust on möödas 72 tundi ja ägedad sümptomid on
@@ -345,12 +346,8 @@ export default function Home() {
 
               <p className="text-lg text-center mb-8">
                 Esimene võimalus ilma sümptomiteta lähikontaktsele SARS-CoV2 testi teha, et
-                isolatsiooni lühendada* <br />
-                <span className="text-gray-500">
-                  (Vähemalt 10 päeva möödas esimesest kontaktist - samas majapidamises elavate inimeste puhul on esimene kontakt tavaliselt COVID-19 haige esimene sümptomipäev. Esimest kontaktipäeva loetakse päevaks 0)
-                </span>
-                :
-                <br />
+                isolatsiooni lühendada*: <br />
+               
                 <span className="text-red-500 font-bold inline-block text-2xl border-b-2 border-red-400">
                   {format(
                     add(startDate, {
@@ -359,14 +356,16 @@ export default function Home() {
                     "dd.MM.yyyy"
                   )}
                 </span>
-              </p>
-
+              </p> <br />
+ <span className="text-gray-500">
+                  (Vähemalt 10 päeva möödas esimesest kontaktist - samas majapidamises elavate inimeste puhul on esimene kontakt tavaliselt COVID-19 haige esimene sümptomipäev. Esimest kontaktipäeva loetakse päevaks 0)
+                </span>
+                
+                <br />
               <p className="text-lg text-center mb-8">
                 Viimane isolatsioonipäev lähikontaktsele, kui testi ei tehta ja patsiendil sümptomeid ei ole tekkinud:
                 <br />
-                <span className="text-gray-500">
-                  (Vähemalt 14 päeva möödas esimesest kontaktist - samas majapidamises elavate inimeste puhul on esimene kontakt tavaliselt COVID-19 haige esimene sümptomipäev. Esimest kontaktipäeva loetakse päevaks 0)
-                </span>
+             
                 <br />
                 <span className="text-red-500 font-bold inline-block text-2xl border-b-2 border-red-400">
                   {format(
@@ -376,8 +375,10 @@ export default function Home() {
                     "dd.MM.yyyy"
                   )}
                 </span>
-              </p>
-
+              </p>  <br />
+   <span className="text-gray-500">
+                  (Vähemalt 14 päeva möödas esimesest kontaktist - samas majapidamises elavate inimeste puhul on esimene kontakt tavaliselt COVID-19 haige esimene sümptomipäev. Esimest kontaktipäeva loetakse päevaks 0)
+                </span>  <br />
               <p>
                 * Kui tehtud SARS-CoV2 test osutub positiivseks, algab
                 isolatsioon testi tegemise päevast algusest peale ning kestab 10
@@ -412,11 +413,9 @@ export default function Home() {
 
               <p className="text-lg text-center mb-8">
                 Esimene võimalus lähikontaktsele SARS-CoV2 testi teha, et
-                isolatsiooni lühendada* <br />
-                <span className="text-gray-500">
-                  (Lähikontaktsega koos elava SARS-CoV2 positiivse testi tegemisest on möödas vähemalt 10 päeva. Testi tegemise päeva loetakse päevaks 0)
-                </span>
-                :
+                isolatsiooni lühendada*: <br />
+             
+           
                 <br />
                 <span className="text-red-500 font-bold inline-block text-2xl border-b-2 border-red-400">
                   {format(
@@ -427,13 +426,15 @@ export default function Home() {
                   )}
                 </span>
               </p>
-
+ <br />
+                <span className="text-gray-500">
+                  (Lähikontaktsega koos elava SARS-CoV2 positiivse testi tegemisest on möödas vähemalt 10 päeva. Testi tegemise päeva loetakse päevaks 0)
+                </span>
+           <br />
               <p className="text-lg text-center mb-8">
                 Viimane isolatsioonipäev lähikontaktsele, kui testi ei tehta ja sümptomeid ei ole tekkinud:
                 <br />
-                <span className="text-gray-500">
-                  (Lähikontaktsega koos elava asümptomaatilise SARS-CoV2 positiivse testi tegemisest on möödas 14 päeva. Testi tegemise päeva loetakse päevaks 0.)
-                </span>
+               
                 <br />
                 <span className="text-red-500 font-bold inline-block text-2xl border-b-2 border-red-400">
                   {format(
@@ -444,7 +445,11 @@ export default function Home() {
                   )}
                 </span>
               </p>
-
+<br />  
+                  <span className="text-gray-500">
+                  (Lähikontaktsega koos elava asümptomaatilise SARS-CoV2 positiivse testi tegemisest on möödas 14 päeva. Testi tegemise päeva loetakse päevaks 0.)
+                </span>
+           <br />
               <p>
                 * Kui tehtud SARS-CoV2 test osutub positiivseks, algab
                 isolatsioon testi tegemise päevast algusest peale ning kestab 10
@@ -477,11 +482,9 @@ export default function Home() {
 
               <p className="text-lg text-center mb-8">
                 Esimene võimalus ilma sümptomiteta lähikontaktsele SARS-CoV2 testi teha, et
-                isolatsiooni lühendada* <br />
-                <span className="text-gray-500">
-                  (10 päeva alates viimasest kontaktist. Viimast kontaktipäeva loetakse päevaks 0.)
-                </span>
-                :
+                isolatsiooni lühendada*: <br />
+                
+              
                 <br />
                 <span className="text-red-500 font-bold inline-block text-2xl border-b-2 border-red-400">
                   {format(
@@ -492,13 +495,16 @@ export default function Home() {
                   )}
                 </span>
               </p>
-
+<br />
+                <span className="text-gray-500">
+                  (10 päeva alates viimasest kontaktist. Viimast kontaktipäeva loetakse päevaks 0.)
+                </span>
+                :
+                <br />
               <p className="text-lg text-center mb-8">
                Viimane isolatsioonipäev lähikontaktsele, kui testi ei tehta ja sümptomeid ei ole tekkinud:
-                <br />
-                <span className="text-gray-500">
-                  (14 päeva alates viimasest kontaktist. Viimast kontaktipäeva loetakse päevaks 0.)
-                </span>
+            
+                
                 <br />
                 <span className="text-red-500 font-bold inline-block text-2xl border-b-2 border-red-400">
                   {format(
@@ -509,7 +515,11 @@ export default function Home() {
                   )}
                 </span>
               </p>
-
+<br />
+                <span className="text-gray-500">
+                  (14 päeva alates viimasest kontaktist. Viimast kontaktipäeva loetakse päevaks 0.)
+                </span>
+                <br />
               <p>
                 * Kui tehtud SARS-CoV2 test osutub positiivseks, algab
                 isolatsioon testi tegemise päevast algusest peale ning kestab 10
