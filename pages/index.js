@@ -166,8 +166,7 @@ export default function Home() {
                 <hr className="my-6 border-none" />
                 <p className="text-lg text-center mb-8">
                   Viimane isolatsioonipäev* on patsiendile <br />
-                  <span className="text-gray-500">[ Kui haigusnähte pole ilmnenud, lõpetatakse isolatsioon 10 päeva möödumisel alates positiivsest testist. Testi tegemise päeva loetakse päevaks 0. ]</span>
-                  <br />
+                  
                   <span className="text-red-500 font-bold inline-block text-2xl border-b-2 border-red-400">
                     {format(
                       add(startDate, {
