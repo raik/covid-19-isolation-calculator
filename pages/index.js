@@ -224,11 +224,11 @@ export default function Home() {
                       "dd.MM.yyyy"
                     )}
                   </span>
-                </p> <br />
+                <br />
 <span className="text-gray-500">
                     (COVID-19-le iseloomulike sümptomite algusest on möödunud vähemalt 10 päeva. Sümptomite tekkepäev on päev 0.)
                   </span>
-                  <br />
+                  </p><br />
                 <p>
                   * Isolatsiooni võib lõpetada ainult siis, kui lisaks ajalistele kriteeriumitele on viimasest
                   palavikust on möödas 72 tundi ja ägedad sümptomid on
