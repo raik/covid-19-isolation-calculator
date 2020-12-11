@@ -66,7 +66,7 @@ export default function Home() {
             Kalkulaator on abistav vahend, et arvutada välja esimesed võimalikud
             isolatsiooni lõpetamise kuupäevad. Isolatsiooni lõpetamiseks peavad
             olema lisaks täidetud kõik Terviseameti poolt kinnitatud kehtivad
-            kriteeriumid.
+            kriteeriumid. Isolatsiooni lõpetab alati arst.
           </p>
         </div>
 
