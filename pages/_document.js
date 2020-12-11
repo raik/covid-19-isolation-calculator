@@ -21,6 +21,7 @@ export default class MyDocument extends Document {
 
             gtag('config', '${GA_TRACKING_ID}', {
               page_path: window.location.pathname,
+              anonymize_ip: true
             });
           `,
             }}
