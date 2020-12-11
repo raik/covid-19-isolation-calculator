@@ -55,10 +55,10 @@ export default function Home() {
 
       <main className="max-w-6xl mx-auto px-8 py-12">
         <h1 className="text-4xl text-center font-bold leading-none mb-10">
-        Eesti Perearstide Seltsi
+          Eesti Perearstide Seltsi
           <br />
           <span className="text-blue-600 uppercase text-2xl">
-           SARS-CoV2 isolatsioonikalkulaator
+            SARS-CoV2 isolatsioonikalkulaator
           </span>
         </h1>
         <div className="prose prose-xl max-w-none mb-12 text-center leading-normal">
@@ -73,7 +73,8 @@ export default function Home() {
         {/* (1) First Step */}
         <div className="shadow-sm bg-white rounded-md py-8 px-4">
           <h2 className="text-center text-2xl mb-6 text-blue-600">
-            Kas patsient on SARS-CoV2 positiivne või SARS-CoV2 positiivse lähikontaktne?
+            Kas patsient on SARS-CoV2 positiivne või SARS-CoV2 positiivse
+            lähikontaktne?
           </h2>
 
           <div className="flex flex-col md:flex-row justify-center md:space-x-5 items-center max-w-3xl mx-auto mb-12">
@@ -164,21 +165,25 @@ export default function Home() {
                   />
                 </div>
                 <hr className="my-6 border-none" />
-                <p className="text-lg text-center mb-8">
-                  Viimane isolatsioonipäev* on patsiendile <br />
-                  
-                  <span className="text-red-500 font-bold inline-block text-2xl border-b-2 border-red-400">
-                    {format(
-                      add(startDate, {
-                        days: 10,
-                      }),
-                      "dd.MM.yyyy"
-                    )}
-                  </span>
-                <br />
- <span className="text-gray-500">[ Kui haigusnähte pole ilmnenud, lõpetatakse isolatsioon 10 päeva möödumisel alates positiivsest testist. Testi tegemise päeva loetakse päevaks 0. ]</span>
-                  <br /> 
-               </p> <p>
+                <div className="mb-8">
+                  <p className="text-lg text-center">
+                    Viimane isolatsioonipäev on patsiendile* <br />
+                    <span className="my-3 text-red-500 font-bold inline-block text-2xl border-red-400 bg-red-50 px-4 py-2 ring-1 ring-red-100 rounded-sm">
+                      {format(
+                        add(startDate, {
+                          days: 10,
+                        }),
+                        "dd.MM.yyyy"
+                      )}
+                    </span>
+                  </p>
+                  <p className="text-gray-500 text-sm text-center max-w-3xl mx-auto pt-3">
+                    Kui haigusnähte pole ilmnenud, lõpetatakse isolatsioon 10
+                    päeva möödumisel alates positiivsest testist. Testi tegemise
+                    päeva loetakse päevaks 0.
+                  </p>
+                </div>
+                <p>
                   * Isolatsiooni võib lõpetada ainult siis, kui sümptomeid ei
                   ole tekkinud.{" "}
                   <strong>
@@ -213,26 +218,27 @@ export default function Home() {
                   />
                 </div>
                 <hr className="my-6 border-none" />
-                <p className="text-lg text-center mb-8">
-                  Viimane isolatsioonipäev* on patsiendile <br />
-                  
-                  <span className="text-red-500 font-bold inline-block text-2xl border-b-2 border-red-400">
-                    {format(
-                      add(startDate, {
-                        days: 10,
-                      }),
-                      "dd.MM.yyyy"
-                    )}
-                  </span>
-                <br />
-<span className="text-gray-500">
-                    (COVID-19-le iseloomulike sümptomite algusest on möödunud vähemalt 10 päeva. Sümptomite tekkepäev on päev 0.)
-                  </span>
-                  </p><br />
+                <div className="mb-8">
+                  <p className="text-lg text-center">
+                    Viimane isolatsioonipäev on patsiendile* <br />
+                    <span className="my-3 text-red-500 font-bold inline-block text-2xl border-red-400 bg-red-50 px-4 py-2 ring-1 ring-red-100 rounded-sm">
+                      {format(
+                        add(startDate, {
+                          days: 10,
+                        }),
+                        "dd.MM.yyyy"
+                      )}
+                    </span>
+                  </p>
+                  <p className="text-gray-500 text-sm text-center max-w-3xl mx-auto pt-3">
+                    COVID-19-le iseloomulike sümptomite algusest on möödunud
+                    vähemalt 10 päeva. Sümptomite tekkepäev on päev 0.
+                  </p>
+                </div>
                 <p>
-                  * Isolatsiooni võib lõpetada ainult siis, kui lisaks ajalistele kriteeriumitele on viimasest
-                  palavikust on möödas 72 tundi ja ägedad sümptomid on
-                  taandunud. 
+                  * Isolatsiooni võib lõpetada ainult siis, kui lisaks
+                  ajalistele kriteeriumitele on viimasest palavikust on möödas
+                  72 tundi ja ägedad sümptomid on taandunud.
                 </p>
               </div>
             </>
@@ -330,7 +336,8 @@ export default function Home() {
             <div>
               <hr className="my-12" />
               <h2 className="text-center text-2xl mb-6 text-blue-600">
-                Mis kuupäeval tekkisid lähikontaktsega koos elaval SARS-CoV2 positiivsel esimesed sümptomid?
+                Mis kuupäeval tekkisid lähikontaktsega koos elaval SARS-CoV2
+                positiivsel esimesed sümptomid?
               </h2>
               <div className="text-center mb-8">
                 <DatePicker
@@ -343,44 +350,52 @@ export default function Home() {
                 />
               </div>
               <hr className="my-6 border-none" />
-
-              <p className="text-lg text-center mb-8">
-                Esimene võimalus ilma sümptomiteta lähikontaktsele SARS-CoV2 testi teha, et
-                isolatsiooni lühendada*: <br />
-            
-                <span className="text-red-500 font-bold inline-block text-2xl border-b-2 border-red-400">
-                  {format(
-                    add(startDate, {
-                      days: 10,
-                    }),
-                    "dd.MM.yyyy"
-                  )}
-                </span>
-              <br />
- <span className="text-gray-500">
-                  (Vähemalt 10 päeva möödas esimesest kontaktist - samas majapidamises elavate inimeste puhul on esimene kontakt tavaliselt COVID-19 haige esimene sümptomipäev. Esimest kontaktipäeva loetakse päevaks 0)
-                </span>
-                 <br />
-                 </p> <p>
-           
-              <p className="text-lg text-center mb-8">     
-                Viimane isolatsioonipäev lähikontaktsele, kui testi ei tehta ja patsiendil sümptomeid ei ole tekkinud:
-                <br /> 
-               </p> <p>
-           
-                <span className="text-red-500 font-bold inline-block text-2xl border-b-2 border-red-400">
-                  {format(
-                    add(startDate, {
-                      days: 14,
-                    }),
-                    "dd.MM.yyyy"
-                  )}
-                </span>
-              <br />
-   <span className="text-gray-500">
-                  (Vähemalt 14 päeva möödas esimesest kontaktist - samas majapidamises elavate inimeste puhul on esimene kontakt tavaliselt COVID-19 haige esimene sümptomipäev. Esimest kontaktipäeva loetakse päevaks 0)
-                </span>  <br />
-              </p> <p>
+              <div className="">
+                <p className="text-lg text-center">
+                  Esimene võimalus ilma sümptomiteta lähikontaktsele SARS-CoV2
+                  testi teha, et isolatsiooni lühendada*: <br />
+                  <span className="my-3 text-red-500 font-bold inline-block text-2xl border-red-400 bg-red-50 px-4 py-2 ring-1 ring-red-100 rounded-sm">
+                    {format(
+                      add(startDate, {
+                        days: 10,
+                      }),
+                      "dd.MM.yyyy"
+                    )}
+                  </span>
+                </p>
+                <p className="text-gray-500 text-sm text-center max-w-3xl mx-auto pt-3">
+                  Vähemalt 10 päeva möödas esimesest kontaktist - samas
+                  majapidamises elavate inimeste puhul on esimene kontakt
+                  tavaliselt COVID-19 haige esimene sümptomipäev. Esimest
+                  kontaktipäeva loetakse päevaks 0
+                </p>
+              </div>
+              <hr className="my-8 max-w-3xl mx-auto" />
+              <div>
+                <p className="text-lg text-center">
+                  Viimane isolatsioonipäev lähikontaktsele, kui testi ei tehta
+                  ja patsiendil sümptomeid ei ole tekkinud:
+                </p>{" "}
+                <div className="mb-8">
+                  <p className="text-lg text-center">
+                    <span className="my-3 text-red-500 font-bold inline-block text-2xl border-red-400 bg-red-50 px-4 py-2 ring-1 ring-red-100 rounded-sm">
+                      {format(
+                        add(startDate, {
+                          days: 14,
+                        }),
+                        "dd.MM.yyyy"
+                      )}
+                    </span>
+                  </p>
+                  <p className="text-gray-500 text-sm text-center max-w-3xl mx-auto pt-3">
+                    Vähemalt 14 päeva möödas esimesest kontaktist - samas
+                    majapidamises elavate inimeste puhul on esimene kontakt
+                    tavaliselt COVID-19 haige esimene sümptomipäev. Esimest
+                    kontaktipäeva loetakse päevaks 0
+                  </p>
+                </div>
+              </div>
+              <p>
                 * Kui tehtud SARS-CoV2 test osutub positiivseks, algab
                 isolatsioon testi tegemise päevast algusest peale ning kestab 10
                 päeva.
@@ -397,9 +412,9 @@ export default function Home() {
             <div>
               <hr className="my-12" />
               <h2 className="text-center text-2xl mb-6 text-blue-600">
-                Mis kuupäeval lähikontaktsega koos elav asümptomaatiline SARS-CoV2 positiivne testi tegi?
+                Mis kuupäeval lähikontaktsega koos elav asümptomaatiline
+                SARS-CoV2 positiivne testi tegi?
               </h2>
-
               <div className="text-center mb-8">
                 <DatePicker
                   id="datepicker"
@@ -411,43 +426,47 @@ export default function Home() {
                 />
               </div>
               <hr className="my-6 border-none" />
+              <div>
+                <p className="text-lg text-center">
+                  Esimene võimalus lähikontaktsele SARS-CoV2 testi teha, et
+                  isolatsiooni lühendada*: <br />
+                  <span className="my-3 text-red-500 font-bold inline-block text-2xl border-red-400 bg-red-50 px-4 py-2 ring-1 ring-red-100 rounded-sm">
+                    {format(
+                      add(startDate, {
+                        days: 10,
+                      }),
+                      "dd.MM.yyyy"
+                    )}
+                  </span>
+                </p>
+                <p className="text-gray-500 text-sm text-center max-w-3xl mx-auto pt-3">
+                  Lähikontaktsega koos elava SARS-CoV2 positiivse testi
+                  tegemisest on möödas vähemalt 10 päeva. Testi tegemise päeva
+                  loetakse päevaks 0
+                </p>
+              </div>
+              <hr className="my-8 max-w-3xl mx-auto" />
 
-              <p className="text-lg text-center mb-8">
-                Esimene võimalus lähikontaktsele SARS-CoV2 testi teha, et
-                isolatsiooni lühendada*: <br />
-            
-                <span className="text-red-500 font-bold inline-block text-2xl border-b-2 border-red-400">
-                  {format(
-                    add(startDate, {
-                      days: 10,
-                    }),
-                    "dd.MM.yyyy"
-                  )}
-                </span>
-              </p>
-           
-                <span className="text-gray-500">
-                  (Lähikontaktsega koos elava SARS-CoV2 positiivse testi tegemisest on möödas vähemalt 10 päeva. Testi tegemise päeva loetakse päevaks 0)
-                </span>
-           <br />
-              <p className="text-lg text-center mb-8">
-                Viimane isolatsioonipäev lähikontaktsele, kui testi ei tehta ja sümptomeid ei ole tekkinud:
-                <br />
-               
-                <span className="text-red-500 font-bold inline-block text-2xl border-b-2 border-red-400">
-                  {format(
-                    add(startDate, {
-                      days: 14,
-                    }),
-                    "dd.MM.yyyy"
-                  )}
-                </span>
-              </p>
-           
-                  <span className="text-gray-500">
-                  (Lähikontaktsega koos elava asümptomaatilise SARS-CoV2 positiivse testi tegemisest on möödas 14 päeva. Testi tegemise päeva loetakse päevaks 0.)
-                </span>
-           <br />  <br />
+              <div className="mb-8">
+                <p className="text-lg text-center">
+                  Viimane isolatsioonipäev lähikontaktsele, kui testi ei tehta
+                  ja sümptomeid ei ole tekkinud:
+                  <br />
+                  <span className="my-3 text-red-500 font-bold inline-block text-2xl border-red-400 bg-red-50 px-4 py-2 ring-1 ring-red-100 rounded-sm">
+                    {format(
+                      add(startDate, {
+                        days: 14,
+                      }),
+                      "dd.MM.yyyy"
+                    )}
+                  </span>
+                </p>
+                <p className="text-gray-500 text-sm text-center max-w-3xl mx-auto pt-3">
+                  Lähikontaktsega koos elava asümptomaatilise SARS-CoV2
+                  positiivse testi tegemisest on möödas 14 päeva. Testi tegemise
+                  päeva loetakse päevaks 0.
+                </p>
+              </div>
               <p>
                 * Kui tehtud SARS-CoV2 test osutub positiivseks, algab
                 isolatsioon testi tegemise päevast algusest peale ning kestab 10
@@ -464,7 +483,8 @@ export default function Home() {
             <div>
               <hr className="my-12" />
               <h2 className="text-center text-2xl mb-6 text-blue-600">
-                Mis kuupäeval lähikontaktne viimast korda SARS-CoV2 positiivsega kokku puutus?
+                Mis kuupäeval lähikontaktne viimast korda SARS-CoV2 positiivsega
+                kokku puutus?
               </h2>
               <div className="text-center mb-8">
                 <DatePicker
@@ -477,47 +497,45 @@ export default function Home() {
                 />
               </div>
               <hr className="my-6 border-none" />
-
-              <p className="text-lg text-center mb-8">
-                Esimene võimalus ilma sümptomiteta lähikontaktsele SARS-CoV2 testi teha, et
-                isolatsiooni lühendada*: <br />
-                
-              
-                <br />
-                <span className="text-red-500 font-bold inline-block text-2xl border-b-2 border-red-400">
-                  {format(
-                    add(startDate, {
-                      days: 10,
-                    }),
-                    "dd.MM.yyyy"
-                  )}
-                </span>
-              </p>
-
-                <span className="text-gray-500">
-                  (10 päeva alates viimasest kontaktist. Viimast kontaktipäeva loetakse päevaks 0.)
-                </span>
-               
-                <br />
+              <div>
+                <p className="text-lg text-center">
+                  Esimene võimalus ilma sümptomiteta lähikontaktsele SARS-CoV2
+                  testi teha, et isolatsiooni lühendada*:
                   <br />
-              <p className="text-lg text-center mb-8">
-               Viimane isolatsioonipäev lähikontaktsele, kui testi ei tehta ja sümptomeid ei ole tekkinud:
-            
-                
-                <br />
-                <span className="text-red-500 font-bold inline-block text-2xl border-b-2 border-red-400">
-                  {format(
-                    add(startDate, {
-                      days: 14,
-                    }),
-                    "dd.MM.yyyy"
-                  )}
-                </span>
-              </p>
-                <span className="text-gray-500">
-                  (14 päeva alates viimasest kontaktist. Viimast kontaktipäeva loetakse päevaks 0.)
-                </span>
-                <br /> <br />
+                  <span className="my-3 text-red-500 font-bold inline-block text-2xl border-red-400 bg-red-50 px-4 py-2 ring-1 ring-red-100 rounded-sm">
+                    {format(
+                      add(startDate, {
+                        days: 10,
+                      }),
+                      "dd.MM.yyyy"
+                    )}
+                  </span>
+                </p>
+                <p className="text-gray-500 text-sm text-center max-w-3xl mx-auto pt-3">
+                  10 päeva alates viimasest kontaktist. Viimast kontaktipäeva
+                  loetakse päevaks 0.
+                </p>
+              </div>
+              <hr className="my-8 max-w-3xl mx-auto" />
+              <div className="mb-8">
+                <p className="text-lg text-center">
+                  Viimane isolatsioonipäev lähikontaktsele, kui testi ei tehta
+                  ja sümptomeid ei ole tekkinud:
+                  <br />
+                  <span className="my-3 text-red-500 font-bold inline-block text-2xl border-red-400 bg-red-50 px-4 py-2 ring-1 ring-red-100 rounded-sm">
+                    {format(
+                      add(startDate, {
+                        days: 14,
+                      }),
+                      "dd.MM.yyyy"
+                    )}
+                  </span>
+                </p>
+                <p className="text-gray-500 text-sm text-center max-w-3xl mx-auto pt-3">
+                  14 päeva alates viimasest kontaktist. Viimast kontaktipäeva
+                  loetakse päevaks 0.
+                </p>
+              </div>
               <p>
                 * Kui tehtud SARS-CoV2 test osutub positiivseks, algab
                 isolatsioon testi tegemise päevast algusest peale ning kestab 10
