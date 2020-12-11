@@ -54,7 +54,7 @@ export default function Home() {
       </Head>
 
       <main className="max-w-6xl mx-auto px-8 py-12">
-        <h1 className="text-4xl text-center font-bold leading-none mb-8">
+        <h1 className="text-4xl text-center font-bold leading-none mb-10">
         Eesti Perearstide Seltsi
           <br />
           <span className="text-blue-600 uppercase text-2xl">
@@ -356,7 +356,7 @@ export default function Home() {
                     "dd.MM.yyyy"
                   )}
                 </span>
-              </p> <br />
+              <br />
  <span className="text-gray-500">
                   (Vähemalt 10 päeva möödas esimesest kontaktist - samas majapidamises elavate inimeste puhul on esimene kontakt tavaliselt COVID-19 haige esimene sümptomipäev. Esimest kontaktipäeva loetakse päevaks 0)
                 </span>
@@ -364,9 +364,9 @@ export default function Home() {
                 <br />
               <p className="text-lg text-center mb-8">
                 Viimane isolatsioonipäev lähikontaktsele, kui testi ei tehta ja patsiendil sümptomeid ei ole tekkinud:
-                <br />
-             
-                <br />
+                <br /> 
+               </p> <p>
+           
                 <span className="text-red-500 font-bold inline-block text-2xl border-b-2 border-red-400">
                   {format(
                     add(startDate, {
