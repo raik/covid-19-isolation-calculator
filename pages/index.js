@@ -66,7 +66,7 @@ export default function Home() {
             Kalkulaator on abistav vahend, et arvutada välja esimesed võimalikud
             isolatsiooni lõpetamise kuupäevad. Isolatsiooni lõpetamiseks peavad
             olema lisaks täidetud kõik Terviseameti poolt kinnitatud kehtivad
-            kriteeriumid. Isolatsiooni lõpetab alati arst.
+            kriteeriumid.
           </p>
         </div>
 
@@ -185,12 +185,13 @@ export default function Home() {
                 </div>
                 <p>
                   * Isolatsiooni võib lõpetada ainult siis, kui sümptomeid ei
-                  ole tekkinud. Isolatsiooni lõpetab arst.{" "}
-                  <strong>
+                  ole tekkinud.
+                    <strong> Isolatsiooni lõpetab arst. </strong> {" "}
+                  
                     Kui isolatsiooni ajal tekivad sümptomid, algab isolatsioon
                     sümptomite tekke hetkest algusest peale ning patsient on
                     sümptomaatiline SARS-CoV2 positiivne.
-                  </strong>
+                  
                 </p>
               </div>
             </>
@@ -238,7 +239,8 @@ export default function Home() {
                 <p>
                   * Isolatsiooni võib lõpetada ainult siis, kui lisaks
                   ajalistele kriteeriumitele on viimasest palavikust on möödas
-                  72 tundi ja ägedad sümptomid on taandunud. Isolatsiooni lõpetab arst.
+                  72 tundi ja ägedad sümptomid on taandunud. 
+                  <strong> Isolatsiooni lõpetab arst. </strong> 
                 </p>
               </div>
             </>
