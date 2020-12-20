@@ -185,7 +185,7 @@ export default function Home() {
                 </div>
                 <p>
                   * Isolatsiooni võib lõpetada ainult siis, kui sümptomeid ei
-                  ole tekkinud.{" "}
+                  ole tekkinud. Isolatsiooni lõpetab arst.{" "}
                   <strong>
                     Kui isolatsiooni ajal tekivad sümptomid, algab isolatsioon
                     sümptomite tekke hetkest algusest peale ning patsient on
@@ -238,7 +238,7 @@ export default function Home() {
                 <p>
                   * Isolatsiooni võib lõpetada ainult siis, kui lisaks
                   ajalistele kriteeriumitele on viimasest palavikust on möödas
-                  72 tundi ja ägedad sümptomid on taandunud.
+                  72 tundi ja ägedad sümptomid on taandunud. Isolatsiooni lõpetab arst.
                 </p>
               </div>
             </>
@@ -267,7 +267,7 @@ export default function Home() {
                     Jah
                   </Button>
                   <p className="text-sm text-gray-600 leading-none px-4">
-                    Kokkupuude haigega on pidev ja igapäevane
+                    Elatakse haigega igapäevaselt koos
                   </p>
                 </div>
                 <span className="text-gray-400">või</span>
@@ -283,7 +283,7 @@ export default function Home() {
                     Ei
                   </Button>
                   <p className="text-sm text-gray-600 leading-none px-4">
-                    Kokkupuude haigega on olnud lühiaegne
+                    Ei elata haigega igapäevaselt koos
                   </p>
                 </div>
               </div>
