@@ -11,6 +11,7 @@
     "@tailwindcss/typography": "^0.3.1",
     "autoprefixer": "^10.0.4",
     "date-fns": "^2.16.1",
+    "js-yaml": "^3.14.1",
     "next": "10.0.3",
     "postcss": "^8.1.14",
     "react": "17.0.1",
