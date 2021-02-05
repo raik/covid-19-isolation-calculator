@@ -59,9 +59,34 @@ export default function PageLayout({ content, locale }) {
           className="text-4xl text-center font-bold leading-none mb-10"
           dangerouslySetInnerHTML={{ __html: content.hero }}
         />
+        {locale === "et" ? (
+          <p className="text-red-50 font-bold max-w-2xl text-center mx-auto mb-10 bg-red-600 shadow-sm rounded-md py-4 px-4">
+            Rakendus on uuendamisel ning ei vasta alates 29.01.2021 kehtima
+            hakanud reeglitele.{" "}
+            <a
+              className="underline"
+              href="https://www.kriis.ee/et/uudised/valitsus-naeb-ette-liikumispiirangu-erandid-covid-19-labi-podenud-ja-vaktsineeritud"
+            >
+              Uutest nõuetest saate lugeda kriis.ee lehelt.
+            </a>
+          </p>
+        ) : (
+          <p className="text-red-50 font-bold max-w-2xl text-center mx-auto mb-10 bg-red-600 shadow-sm rounded-md py-4 px-4">
+            Приложение обновляется и не соответствует новым требованиям от
+            29.01.2021.{" "}
+            <a
+              className="underline"
+              href="https://www.kriis.ee/et/uudised/valitsus-naeb-ette-liikumispiirangu-erandid-covid-19-labi-podenud-ja-vaktsineeritud"
+            >
+              О новых требованиях можно узнать на странице kriis.ee.
+            </a>
+          </p>
+        )}
+
         <div className="prose prose-xl max-w-none mb-12 text-center leading-normal">
           <p>{content.description}</p>
         </div>
+
         {/* (1) First Step */}
         <div className="shadow-sm bg-white rounded-md py-8 px-4">
           <h2 className="text-center text-2xl mb-6 text-blue-600">
