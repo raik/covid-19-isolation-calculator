@@ -24,7 +24,7 @@ q1_1b:
   answer_prefix: Viimane isolatsioonipäev on patsiendile* 
   text: Kui haigusnähte pole ilmnenud, lõpetatakse isolatsioon 10 päeva möödumisel alates positiivsest testist. Testi tegemise päeva loetakse päevaks 0.
   text2: |
-    * Isolatsiooni võib lõpetada ainult siis, kui sümptomeid ei ole tekkinud. <strong> Isolatsiooni lõpetab arst. </strong> Kui isolatsiooni ajal tekivad sümptomid, algab isolatsioon sümptomite tekke hetkest algusest peale ning patsient on sümptomaatiline SARS-CoV2 positiivne.
+    * Isolatsiooni võib lõpetada ainult siis, kui sümptomeid ei ole tekkinud. <strong> Isolatsiooni lõpetab arst. </strong> Kui isolatsiooni ajal tekivad sümptomid, algab isolatsioonipäevade arvestamine algusest – sümptomite tekke päev on päev 0, isolatsioon kestab 10 päeva ning viimasest palavikust on möödas 72 tundi ja ägedad sümptomid on taandunud. <strong>Kordustesti paranemise kinnitamiseks ei teostata ühelgi juhul.</strong>
 
 # (1.1a) Positive and symptomatic
 q1_1a:
@@ -32,7 +32,7 @@ q1_1a:
   answer_prefix: Viimane isolatsioonipäev on patsiendile*
   text: COVID-19-le iseloomulike sümptomite algusest on möödunud vähemalt 10 päeva. Sümptomite tekkepäev on päev 0.
   text2: |
-    * Isolatsiooni võib lõpetada ainult siis, kui lisaks ajalistele kriteeriumitele on viimasest palavikust on möödas 72 tundi ja ägedad sümptomid on taandunud. <strong> Isolatsiooni lõpetab arst. </strong>
+    * Isolatsiooni võib lõpetada ainult siis, kui lisaks ajalistele kriteeriumitele on viimasest palavikust on möödas 72 tundi ja ägedad sümptomid on taandunud. <strong> Isolatsiooni lõpetab arst. </strong> <strong>Kordustesti paranemise kinnitamiseks ei teostata ühelgi juhul.</strong>
 
 # (2) Close Contact
 q2:
