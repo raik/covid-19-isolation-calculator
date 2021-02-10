@@ -39,13 +39,13 @@ q1_1_2:
 
 # (2) Close Contact
 q2:
-  question: Kas lähikontaktne on viimase 180 päeva jooksul andnud positiivse RT-PCR SARS-CoV2 positiivse proovi?
+  question: Kas lähikontaktne on viimase 180 päeva jooksul andnud positiivse RT-PCR SARS-CoV2 proovi?
   button_yes: Jah
   button_no: Ei
 
 # (2.1) Close Contact has given positive test (YES)
 q2_1:
-  text: Kui viimase 180 päeva jooksul on isik andnud SARS-CoV2 testi ning esmane isolatsiooniaeg on möödas, siis lähikontaktsena isolatsiooni jääma ei pea.
+  text: Kui viimase 180 päeva jooksul on isik andnud positiivse SARS-CoV2 testi ning esmane isolatsiooniaeg on möödas, siis lähikontaktsena isolatsiooni jääma ei pea.
   text2: | 
     Kui positiivset RT-PCR testist on <strong>möödas rohkem, kui 180 päeva, siis võrdsustatakse isik mittepõdenenuga</strong> ning kehtivad kõik lähikontaktsetele kehtestatud isolatsioonireeglid. <br/><br/>
     * COVID-19 haiguse põdemise tõenduseks peab diagnoos olema kinnitatud SARS-CoV2 RT-PCR positiivse testiga. Antikehade testi positiivne tulemus pole usaldusväärne tõend läbipõdemise kohta ja ei vabasta edasistest piirangutest.
