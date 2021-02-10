@@ -56,7 +56,7 @@ export default function PageLayout({ content, locale }) {
       </Head>
 
       <main className="max-w-6xl mx-auto px-8 py-12">
-        <LanguagePicker locale={locale} />
+        {/* <LanguagePicker locale={locale} /> */}
         <h1
           className="text-4xl text-center font-bold leading-none mb-10"
           dangerouslySetInnerHTML={{ __html: content.hero }}
@@ -545,9 +545,9 @@ export default function PageLayout({ content, locale }) {
               </div>
               <hr className="my-8 max-w-3xl mx-auto" />
 
-                <p
-                  dangerouslySetInnerHTML={{ __html: content.q2_2_2_1_1.text2 }}
-                />
+              <p
+                dangerouslySetInnerHTML={{ __html: content.q2_2_2_1_1.text2 }}
+              />
             </div>
           ) : (
             ""
