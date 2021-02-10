@@ -11,6 +11,8 @@ export default function PageLayout({ content, locale }) {
   const [symptomType, setSymptomType] = useState("");
   const [closeContactType, setCloseContactType] = useState("");
   const [closeContactSymptoms, setCloseContactSymptoms] = useState();
+  const [tested, setTested] = useState();
+  const [vaccinated, setVaccinated] = useState();
   const [startDate, setStartDate] = useState(new Date());
 
   const CustomDatePicker = forwardRef(
@@ -103,6 +105,8 @@ export default function PageLayout({ content, locale }) {
                 setCloseContactType("");
                 setCloseContactSymptoms(undefined);
                 setStartDate(new Date());
+                setTested();
+                setVaccinated();
               }}
             >
               <span className="font-light text-blue-200 normal-case">
@@ -160,14 +164,14 @@ export default function PageLayout({ content, locale }) {
             ""
           )}
 
-          {/* (1.1b) Positive and asymptomatic */}
+          {/* (1.1.2) Positive and asymptomatic */}
           {symptomType === "asymptomatic" && patientType === "positive" ? (
             <>
               <hr className="my-12" />
               <div>
                 <h2
                   className="text-center text-2xl mb-6 text-blue-600"
-                  dangerouslySetInnerHTML={{ __html: content.q1_1b.question }}
+                  dangerouslySetInnerHTML={{ __html: content.q1_1_2.question }}
                 />
 
                 <div className="text-center mb-8">
@@ -185,7 +189,7 @@ export default function PageLayout({ content, locale }) {
                 <hr className="my-6 border-none" />
                 <div className="mb-8">
                   <p className="text-lg text-center">
-                    {content.q1_1b.answer_prefix} <br />
+                    {content.q1_1_2.answer_prefix} <br />
                     <span className="my-3 text-red-500 font-bold inline-block text-2xl border-red-400 bg-red-50 px-4 py-2 ring-1 ring-red-100 rounded-sm">
                       {format(
                         add(startDate, {
@@ -197,24 +201,24 @@ export default function PageLayout({ content, locale }) {
                   </p>
                   <p
                     className="text-gray-500 text-sm text-center max-w-3xl mx-auto pt-3"
-                    dangerouslySetInnerHTML={{ __html: content.q1_1b.text }}
+                    dangerouslySetInnerHTML={{ __html: content.q1_1_2.text }}
                   />
                 </div>
-                <p dangerouslySetInnerHTML={{ __html: content.q1_1b.text2 }} />
+                <p dangerouslySetInnerHTML={{ __html: content.q1_1_2.text2 }} />
               </div>
             </>
           ) : (
             ""
           )}
 
-          {/* (1.1a) Positive and symptomatic */}
+          {/* (1.1.1) Positive and symptomatic */}
           {symptomType === "symptomatic" && patientType === "positive" ? (
             <>
               <hr className="my-12" />
               <div>
                 <h2
                   className="text-center text-2xl mb-6 text-blue-600"
-                  dangerouslySetInnerHTML={{ __html: content.q1_1a.question }}
+                  dangerouslySetInnerHTML={{ __html: content.q1_1_1.question }}
                 />
                 <div className="text-center mb-8">
                   <DatePicker
@@ -231,7 +235,7 @@ export default function PageLayout({ content, locale }) {
                 <hr className="my-6 border-none" />
                 <div className="mb-8">
                   <p className="text-lg text-center">
-                    {content.q1_1a.answer_prefix} <br />
+                    {content.q1_1_1.answer_prefix} <br />
                     <span className="my-3 text-red-500 font-bold inline-block text-2xl border-red-400 bg-red-50 px-4 py-2 ring-1 ring-red-100 rounded-sm">
                       {format(
                         add(startDate, {
@@ -243,10 +247,10 @@ export default function PageLayout({ content, locale }) {
                   </p>
                   <p
                     className="text-gray-500 text-sm text-center max-w-3xl mx-auto pt-3"
-                    dangerouslySetInnerHTML={{ __html: content.q1_1a.text }}
+                    dangerouslySetInnerHTML={{ __html: content.q1_1_1.text }}
                   />
                 </div>
-                <p dangerouslySetInnerHTML={{ __html: content.q1_1a.text2 }} />
+                <p dangerouslySetInnerHTML={{ __html: content.q1_1_1.text2 }} />
               </div>
             </>
           ) : (
@@ -259,7 +263,163 @@ export default function PageLayout({ content, locale }) {
               <hr className="my-12" />
               <h2
                 className="text-center text-2xl mb-6 text-blue-600"
+                // dangerouslySetInnerHTML={{
+                //   __html: `Kas lähikontaktne on viimase 180 päeva jooksul andnud positiivse RT-PCR SARS-CoV2 positiivse proovi?`,
+                // }}
                 dangerouslySetInnerHTML={{ __html: content.q2.question }}
+              />
+              <div className="flex flex-col md:flex-row justify-center md:space-x-5 items-center max-w-3xl mx-auto mb-12">
+                <div>
+                  <Button
+                    className="mb-2"
+                    isActive={tested === true}
+                    isDisabled={tested === false}
+                    handleClick={() => {
+                      setTested(true);
+                    }}
+                  >
+                    {content.q2.button_yes}
+                  </Button>
+                  <p className="text-sm text-gray-600 leading-none px-4">
+                    {/* {content.q2.button_yes_helper} */}
+                  </p>
+                </div>
+                <span className="text-gray-400">{content.or}</span>
+                <div>
+                  <Button
+                    className="mb-2"
+                    isActive={tested === false}
+                    isDisabled={tested === true}
+                    handleClick={() => {
+                      setTested(false);
+                    }}
+                  >
+                    {content.q2.button_no}
+                  </Button>
+                  <p className="text-sm text-gray-600 leading-none px-4">
+                    {/* {content.q2.button_no_helper} */}
+                  </p>
+                </div>
+              </div>
+            </div>
+          ) : (
+            ""
+          )}
+
+          {/* (2.1) Close Contact has given positive test (YES) */}
+          {patientType === "close-contact" && tested === true ? (
+            <div>
+              <hr className="my-12" />
+              <p
+                className="text-center text-2xl mb-6 text-blue-600"
+                dangerouslySetInnerHTML={{ __html: content.q2_1.text }}
+              />
+              <div className="mb-8">
+                <p
+                  className="text-gray-500 text-sm text-center max-w-3xl mx-auto pt-3"
+                  dangerouslySetInnerHTML={{ __html: content.q2_1.text2 }}
+                />
+              </div>
+            </div>
+          ) : (
+            ""
+          )}
+
+          {/* (2.2.) Close Contact has given negative test (NO) */}
+          {patientType === "close-contact" && tested === false ? (
+            <div>
+              <hr className="my-12" />
+              <h2
+                className="text-center text-2xl mb-6 text-blue-600"
+                // dangerouslySetInnerHTML={{
+                //   __html: `Kas lähikontaktne isik on <strong>täielikult</strong> vaktsineeritud mõne SARS-CoV2 vaktsiiniga?`,
+                // }}
+                dangerouslySetInnerHTML={{
+                  __html: content.q2_2.question,
+                }}
+              />
+              <div className="flex flex-col md:flex-row justify-center md:space-x-5 items-center max-w-3xl mx-auto mb-12">
+                <div>
+                  <Button
+                    className="mb-2"
+                    isActive={vaccinated === true}
+                    isDisabled={vaccinated === false}
+                    handleClick={() => {
+                      setVaccinated(true);
+                    }}
+                  >
+                    {content.q2_2.button_yes}
+                    {/* Vaktsineeritud */}
+                  </Button>
+                  <p className="text-sm text-gray-600 leading-none px-4">
+                    {/* {content.q2.button_yes_helper} */}
+                  </p>
+                </div>
+                <span className="text-gray-400">{content.or}</span>
+                <div>
+                  <Button
+                    className="mb-2"
+                    isActive={vaccinated === false}
+                    isDisabled={vaccinated === true}
+                    handleClick={() => {
+                      setVaccinated(false);
+                    }}
+                  >
+                    {content.q2_2.button_no}
+                    {/* Mittevaktsineeritud */}
+                  </Button>
+                  <p className="text-sm text-gray-600 leading-none px-4">
+                    {/* {content.q2.button_no_helper} */}
+                  </p>
+                </div>
+              </div>
+              <div className="mb-8">
+                <p
+                  className="text-gray-500 text-sm text-center max-w-3xl mx-auto pt-3"
+                  dangerouslySetInnerHTML={{
+                    __html: content.q2_2.text,
+                  }}
+                />
+              </div>
+            </div>
+          ) : (
+            ""
+          )}
+
+          {/* (2.2.1) Close Contact has given negative test (NO) and vaccinated */}
+          {patientType === "close-contact" &&
+          tested === false &&
+          vaccinated === true ? (
+            <div>
+              <hr className="my-12" />
+              <p
+                className="text-center text-2xl mb-6 text-blue-600"
+                dangerouslySetInnerHTML={{
+                  __html: content.q2_2_1.text,
+                }}
+              />
+              <div className="mb-8">
+                <p
+                  className="text-gray-500 text-sm text-center max-w-3xl mx-auto pt-3"
+                  dangerouslySetInnerHTML={{
+                    __html: content.q2_2_1.text2,
+                  }}
+                />
+              </div>
+            </div>
+          ) : (
+            ""
+          )}
+
+          {/* (2.2.2) Close Contact has given negative test (NO) and not vaccinated */}
+          {patientType === "close-contact" &&
+          tested === false &&
+          vaccinated === false ? (
+            <div>
+              <hr className="my-12" />
+              <h2
+                className="text-center text-2xl mb-6 text-blue-600"
+                dangerouslySetInnerHTML={{ __html: content.q2_2_2.question }}
               />
               <div className="flex flex-col md:flex-row justify-center md:space-x-5 items-center max-w-3xl mx-auto mb-12">
                 <div>
@@ -271,10 +431,10 @@ export default function PageLayout({ content, locale }) {
                       setCloseContactType("active");
                     }}
                   >
-                    {content.q2.button_yes}
+                    {content.q2_2_2.button_yes}
                   </Button>
                   <p className="text-sm text-gray-600 leading-none px-4">
-                    {content.q2.button_yes_helper}
+                    {content.q2_2_2.button_yes_helper}
                   </p>
                 </div>
                 <span className="text-gray-400">{content.or}</span>
@@ -287,10 +447,10 @@ export default function PageLayout({ content, locale }) {
                       setCloseContactType("inactive");
                     }}
                   >
-                    {content.q2.button_no}
+                    {content.q2_2_2.button_no}
                   </Button>
                   <p className="text-sm text-gray-600 leading-none px-4">
-                    {content.q2.button_no_helper}
+                    {content.q2_2_2.button_no_helper}
                   </p>
                 </div>
               </div>
@@ -299,13 +459,16 @@ export default function PageLayout({ content, locale }) {
             ""
           )}
 
-          {/* (2.1a) Close Contact and in active contact */}
-          {patientType === "close-contact" && closeContactType === "active" ? (
+          {/* (2.2.2.1) Close Contact has given negative test (NO) and not vaccinated, active contact */}
+          {patientType === "close-contact" &&
+          closeContactType === "active" &&
+          tested === false &&
+          vaccinated === false ? (
             <div>
               <hr className="my-12" />
               <h2
                 className="text-center text-2xl mb-6 text-blue-600"
-                dangerouslySetInnerHTML={{ __html: content.q2_1a.question }}
+                dangerouslySetInnerHTML={{ __html: content.q2_2_2_1.question }}
               />
 
               <div className="flex flex-col md:flex-row justify-center md:space-x-5 items-center max-w-3xl mx-auto mb-12">
@@ -316,7 +479,7 @@ export default function PageLayout({ content, locale }) {
                     setCloseContactSymptoms(true);
                   }}
                 >
-                  {content.q2_1a.button_yes}
+                  {content.q2_2_2_1.button_yes}
                 </Button>
 
                 <span className="text-gray-400">{content.or}</span>
@@ -327,7 +490,7 @@ export default function PageLayout({ content, locale }) {
                     setCloseContactSymptoms(false);
                   }}
                 >
-                  {content.q2_1a.button_no}
+                  {content.q2_2_2_1.button_no}
                 </Button>
               </div>
             </div>
@@ -335,15 +498,19 @@ export default function PageLayout({ content, locale }) {
             ""
           )}
 
-          {/* (2.1a.1) Close Contact, in active contact and positive person has symptoms */}
+          {/* (2.2.2.1.1) Close Contact, in active contact and positive person has symptoms */}
           {patientType === "close-contact" &&
           closeContactType === "active" &&
+          tested === false &&
+          vaccinated === false &&
           closeContactSymptoms === true ? (
             <div>
               <hr className="my-12" />
               <h2
                 className="text-center text-2xl mb-6 text-blue-600"
-                dangerouslySetInnerHTML={{ __html: content.q2_1a_1.question }}
+                dangerouslySetInnerHTML={{
+                  __html: content.q2_2_2_1_1.question,
+                }}
               />
               <div className="text-center mb-8">
                 <DatePicker
@@ -360,7 +527,7 @@ export default function PageLayout({ content, locale }) {
               <hr className="my-6 border-none" />
               <div className="">
                 <p className="text-lg text-center">
-                  {content.q2_1a_1.answer_prefix}
+                  {content.q2_2_2_1_1.answer_prefix}
                   <br />
                   <span className="my-3 text-red-500 font-bold inline-block text-2xl border-red-400 bg-red-50 px-4 py-2 ring-1 ring-red-100 rounded-sm">
                     {format(
@@ -373,14 +540,14 @@ export default function PageLayout({ content, locale }) {
                 </p>
                 <p
                   className="text-gray-500 text-sm text-center max-w-3xl mx-auto pt-3"
-                  dangerouslySetInnerHTML={{ __html: content.q2_1a_1.text }}
+                  dangerouslySetInnerHTML={{ __html: content.q2_2_2_1_1.text }}
                 />
               </div>
               <hr className="my-8 max-w-3xl mx-auto" />
               <div>
                 <p
                   className="text-lg text-center"
-                  dangerouslySetInnerHTML={{ __html: content.q2_1a_1.text2 }}
+                  dangerouslySetInnerHTML={{ __html: content.q2_2_2_1_1.text2 }}
                 />
                 <div className="mb-8">
                   <p className="text-lg text-center">
@@ -395,25 +562,33 @@ export default function PageLayout({ content, locale }) {
                   </p>
                   <p
                     className="text-gray-500 text-sm text-center max-w-3xl mx-auto pt-3"
-                    dangerouslySetInnerHTML={{ __html: content.q2_1a_1.text3 }}
+                    dangerouslySetInnerHTML={{
+                      __html: content.q2_2_2_1_1.text3,
+                    }}
                   />
                 </div>
               </div>
-              <p dangerouslySetInnerHTML={{ __html: content.q2_1a_1.text4 }} />
+              <p
+                dangerouslySetInnerHTML={{ __html: content.q2_2_2_1_1.text4 }}
+              />
             </div>
           ) : (
             ""
           )}
 
-          {/* (2.1a.2) Close Contact, in active contact and positive person is asymptomatic */}
+          {/* (2.2.2.1.2) Close Contact, in active contact and positive person is asymptomatic */}
           {patientType === "close-contact" &&
           closeContactType === "active" &&
+          tested === false &&
+          vaccinated === false &&
           closeContactSymptoms === false ? (
             <div>
               <hr className="my-12" />
               <h2
                 className="text-center text-2xl mb-6 text-blue-600"
-                dangerouslySetInnerHTML={{ __html: content.q2_1a_2.question }}
+                dangerouslySetInnerHTML={{
+                  __html: content.q2_2_2_1_2.question,
+                }}
               />
               <div className="text-center mb-8">
                 <DatePicker
@@ -430,7 +605,7 @@ export default function PageLayout({ content, locale }) {
               <hr className="my-6 border-none" />
               <div>
                 <p className="text-lg text-center">
-                  {content.q2_1a_2.answer_prefix} <br />
+                  {content.q2_2_2_1_2.answer_prefix} <br />
                   <span className="my-3 text-red-500 font-bold inline-block text-2xl border-red-400 bg-red-50 px-4 py-2 ring-1 ring-red-100 rounded-sm">
                     {format(
                       add(startDate, {
@@ -442,14 +617,14 @@ export default function PageLayout({ content, locale }) {
                 </p>
                 <p
                   className="text-gray-500 text-sm text-center max-w-3xl mx-auto pt-3"
-                  dangerouslySetInnerHTML={{ __html: content.q2_1a_2.text }}
+                  dangerouslySetInnerHTML={{ __html: content.q2_2_2_1_2.text }}
                 />
               </div>
               <hr className="my-8 max-w-3xl mx-auto" />
 
               <div className="mb-8">
                 <p className="text-lg text-center">
-                  {content.q2_1a_2.text2}
+                  {content.q2_2_2_1_2.text2}
                   <br />
                   <span className="my-3 text-red-500 font-bold inline-block text-2xl border-red-400 bg-red-50 px-4 py-2 ring-1 ring-red-100 rounded-sm">
                     {format(
@@ -462,22 +637,26 @@ export default function PageLayout({ content, locale }) {
                 </p>
                 <p
                   className="text-gray-500 text-sm text-center max-w-3xl mx-auto pt-3"
-                  dangerouslySetInnerHTML={{ __html: content.q2_1a_2.text3 }}
+                  dangerouslySetInnerHTML={{ __html: content.q2_2_2_1_2.text3 }}
                 />
               </div>
-              <p dangerouslySetInnerHTML={{ __html: content.q2_1a_2.text4 }} />
+              <p
+                dangerouslySetInnerHTML={{ __html: content.q2_2_2_1_2.text4 }}
+              />
             </div>
           ) : (
             ""
           )}
 
-          {/* (2.1b) Close Contact, in inactive contact */}
+          {/* (2.2.2.2) Close Contact has given negative test (NO) and not vaccinated, not active contact */}
           {patientType === "close-contact" &&
+          tested === false &&
+          vaccinated === false &&
           closeContactType === "inactive" ? (
             <div>
               <hr className="my-12" />
               <h2 className="text-center text-2xl mb-6 text-blue-600">
-                {content.q2_1b.question}
+                {content.q2_2_2_2.question}
               </h2>
               <div className="text-center mb-8">
                 <DatePicker
@@ -494,7 +673,7 @@ export default function PageLayout({ content, locale }) {
               <hr className="my-6 border-none" />
               <div>
                 <p className="text-lg text-center">
-                  {content.q2_1b.answer_prefix}
+                  {content.q2_2_2_2.answer_prefix}
                   <br />
                   <span className="my-3 text-red-500 font-bold inline-block text-2xl border-red-400 bg-red-50 px-4 py-2 ring-1 ring-red-100 rounded-sm">
                     {format(
@@ -507,13 +686,13 @@ export default function PageLayout({ content, locale }) {
                 </p>
                 <p
                   className="text-gray-500 text-sm text-center max-w-3xl mx-auto pt-3"
-                  dangerouslySetInnerHTML={{ __html: content.q2_1b.text }}
+                  dangerouslySetInnerHTML={{ __html: content.q2_2_2_2.text }}
                 />
               </div>
               <hr className="my-8 max-w-3xl mx-auto" />
               <div className="mb-8">
                 <p className="text-lg text-center">
-                  {content.q2_1b.text2}
+                  {content.q2_2_2_2.text2}
                   <br />
                   <span className="my-3 text-red-500 font-bold inline-block text-2xl border-red-400 bg-red-50 px-4 py-2 ring-1 ring-red-100 rounded-sm">
                     {format(
@@ -526,10 +705,10 @@ export default function PageLayout({ content, locale }) {
                 </p>
                 <p
                   className="text-gray-500 text-sm text-center max-w-3xl mx-auto pt-3"
-                  dangerouslySetInnerHTML={{ __html: content.q2_1b.text3 }}
+                  dangerouslySetInnerHTML={{ __html: content.q2_2_2_2.text3 }}
                 />
               </div>
-              <p dangerouslySetInnerHTML={{ __html: content.q2_1b.text4 }} />
+              <p dangerouslySetInnerHTML={{ __html: content.q2_2_2_2.text4 }} />
             </div>
           ) : (
             ""

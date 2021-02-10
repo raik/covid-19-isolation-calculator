@@ -5,7 +5,7 @@ description: Kalkulaator on abistav vahend, et arvutada välja esimesed võimali
 or: või
 select_date: |
   Vali kuupäev:
-
+ 
 # (1) First Step 
 q1:
   question: Kas patsient on SARS-CoV2 positiivne või SARS-CoV2 positiivse lähikontaktne?
@@ -18,70 +18,101 @@ q1_1:
   button_yes: Jah
   button_no: Ei
 
-# (1.1b) Positive and asymptomatic 
-q1_1b: 
-  question: Millal oli <span class="underline">ilma sümptomiteta</span> SARS-CoV2 positiivse patsiendi testi tegemise kuupäev?
-  answer_prefix: Viimane isolatsioonipäev on patsiendile* 
-  text: Kui haigusnähte pole ilmnenud, lõpetatakse isolatsioon 10 päeva möödumisel alates positiivsest testist. Testi tegemise päeva loetakse päevaks 0.
-  text2: |
-    * Isolatsiooni võib lõpetada ainult siis, kui sümptomeid ei ole tekkinud. <strong> Isolatsiooni lõpetab arst. </strong> Kui isolatsiooni ajal tekivad sümptomid, algab isolatsioonipäevade arvestamine algusest – sümptomite tekke päev on päev 0, isolatsioon kestab 10 päeva ning viimasest palavikust on möödas 72 tundi ja ägedad sümptomid on taandunud. <strong>Kordustesti paranemise kinnitamiseks ei teostata ühelgi juhul.</strong>
-
-# (1.1a) Positive and symptomatic
-q1_1a:
+# (1.1.1) Positive and symptomatic
+q1_1_1:
   question: Millal oli <span class="underline">sümptomaatilise</span> SARS-CoV2 patsiendi esimeste sümptomite tekkimise kuupäev?
-  answer_prefix: Viimane isolatsioonipäev on patsiendile*
+  answer_prefix: |
+    Viimane isolatsioonipäev (kaasa arvatud):
   text: COVID-19-le iseloomulike sümptomite algusest on möödunud vähemalt 10 päeva. Sümptomite tekkepäev on päev 0.
   text2: |
     * Isolatsiooni võib lõpetada ainult siis, kui lisaks ajalistele kriteeriumitele on viimasest palavikust on möödas 72 tundi ja ägedad sümptomid on taandunud. <strong> Isolatsiooni lõpetab arst. </strong> <strong>Kordustesti paranemise kinnitamiseks ei teostata ühelgi juhul.</strong>
 
+# (1.1.2) Positive and asymptomatic 
+q1_1_2: 
+  question: Millal oli <span class="underline">ilma sümptomiteta</span> SARS-CoV2 positiivse patsiendi testi tegemise kuupäev?
+  answer_prefix: |
+    Viimane isolatsioonipäev (kaasa arvatud):
+  text: Kui haigusnähte pole ilmnenud, lõpetatakse isolatsioon 10 päeva möödumisel alates positiivsest testist. Testi tegemise päeva loetakse päevaks 0.
+  text2: |
+    * Isolatsiooni võib lõpetada ainult siis, kui sümptomeid ei ole tekkinud. <strong> Isolatsiooni lõpetab arst. </strong> Kui isolatsiooni ajal tekivad sümptomid, algab isolatsioonipäevade arvestamine algusest – sümptomite tekke päev on päev 0, isolatsioon kestab 10 päeva ning viimasest palavikust on möödas 72 tundi ja ägedad sümptomid on taandunud. <strong>Kordustesti paranemise kinnitamiseks ei teostata ühelgi juhul.</strong>
+
+
 # (2) Close Contact
 q2:
+  question: Kas lähikontaktne on viimase 180 päeva jooksul andnud positiivse RT-PCR SARS-CoV2 positiivse proovi?
+  button_yes: Jah
+  button_no: Ei
+
+# (2.1) Close Contact has given positive test (YES)
+q2_1:
+  text: Kui positiivset RT-PCR testist on <strong>möödas rohkem, kui 180 päeva, siis võrdsustatakse isik mittepõdenenuga</strong> ning kehtivad kõik lähikontaktsetele kehtestatud isolatsioonireeglid.
+  text2: | 
+    * COVID-19 haiguse põdemise tõenduseks peab diagnoos olema kinnitatud SARS-CoV2 RT-PCR positiivse testiga. Antikehade testi positiivne tulemus pole usaldusväärne tõend läbipõdemise kohta ja ei vabasta edasistest piirangutest.
+
+# (2.2) Close Contact has given negative test (NO)
+q2_2:
+  question: Kas lähikontaktne isik on <strong>täielikult</strong> vaktsineeritud mõne SARS-CoV2 vaktsiiniga?
+  button_yes: Vaktsineeritud
+  button_no: Mittevaktsineeritud
+  text: Täielikult vaktsineerituteks loetakse:<br/> 1. <strong>Pfizer/BioNTech COMIRNATY</strong> - alates 7. päevast pärast II vaktsiinidoosi manustamist.<br/> 2. <strong>Moderna</strong> - alates 14. päevast pärast II vaktsiinidoosi manustamist.<br/><br/> Poolelioleva vaktsineerimisega inimest loetakse võrdsustatuks mittevaktsineerituga.
+
+# (2.2.1) Close Contact has given negative test (NO) and vaccinated
+q2_2_1:
+  text: Kui isik on täielikult vaktsineeritud, siis lähikontaktsena isolatsiooni jääma ei pea.
+  text2: COVID-19 haigusele iseloomulike sümptomite tekkel tuleb isikul teavitada perearstikeskust ning ta suunatakse SARS-CoV2 testile. Isik peab jääma isolatsiooni kuni negatiivse vastuse saabumiseni. Positiivse vastuse korral on tegemist COVID-19 nakatumisega.
+
+# (2.2.2) Close Contact has given negative test (NO) and not vaccinated
+q2_2_2:
   question: Kas lähikontaktne elab SARS-CoV2 positiivsega samas majapidamises?
   button_yes: Jah
   button_no: Ei
   button_yes_helper: Elatakse haigega igapäevaselt koos
   button_no_helper: Ei elata haigega igapäevaselt koos
 
-# (2.1a) Close Contact and in active contact
-q2_1a:
+# (2.2.2.2) Close Contact has given negative test (NO) and not vaccinated, not active contact
+q2_2_2_2:
+  question: Mis kuupäeval lähikontaktne viimast korda SARS-CoV2 positiivsega kokku puutus?
+  answer_prefix: |
+    Viimane isolatsioonipäev (kaasa arvatud):
+  text: 10 päeva alates viimasest kontaktist. Viimast kontaktipäeva loetakse päevaks 0.
+  text2: |
+    Viimane isolatsioonipäev lähikontaktsele, kui testi ei tehta ja sümptomeid ei ole tekkinud:
+  text3: 14 päeva alates viimasest kontaktist. Viimast kontaktipäeva loetakse päevaks 0.
+  text4: |    
+    <strong>Terviseamet soovitab kõigil lähikontaktsetel 10. päeval teha ka RT-PCR SARS-CoV2 test, et välistada asümptomaatilist nakatumist.</strong><br/>
+    * Kui isolatsiooniperioodil tekivad COVID-19 haigusele iseloomulikud sümptomid, tuleb isikul teavitada perearstikeskust ning ta suunatakse SARS-CoV2 testile.<br/> ** Kui tehtud SARS-CoV2 test osutub positiivseks, algab isolatsioon testi tegemise päevast algusest peale ning vähemalt kestab 10 päeva.
+
+# (2.2.2.1) Close Contact has given negative test (NO) and not vaccinated, active contact
+q2_2_2_1:
   question: Kas <span class="underline">samas majapidamises</span> elaval SARS-CoV2 <span class="underline">positiivsel</span> esinevad haigussümptomid?
   button_yes: Jah
   button_no: Ei
 
-# (2.1a.1) Close Contact, in active contact and positive person has symptoms
-q2_1a_1:
+# (2.2.2.1.1) Close Contact, in active contact and positive person has symptoms
+q2_2_2_1_1:
   question: Mis kuupäeval tekkisid lähikontaktsega koos elaval SARS-CoV2 positiivsel esimesed sümptomid?
   answer_prefix: |
-    Esimene võimalus ilma sümptomiteta lähikontaktsele SARS-CoV2 testi teha, et isolatsiooni lühendada*: 
+    Viimane isolatsioonipäev (kaasa arvatud):
   text: Vähemalt 10 päeva möödas esimesest kontaktist - samas majapidamises elavate inimeste puhul on esimene kontakt tavaliselt COVID-19 haige esimene sümptomipäev. Esimest kontaktipäeva loetakse päevaks 0
   text2: |
     Viimane isolatsioonipäev lähikontaktsele, kui testi ei tehta ja patsiendil sümptomeid ei ole tekkinud:
   text3: |
     Vähemalt 14 päeva möödas esimesest kontaktist - samas majapidamises elavate inimeste puhul on esimene kontakt tavaliselt COVID-19 haige esimene sümptomipäev. Esimest kontaktipäeva loetakse päevaks 0
-  text4: |
-    * Kui tehtud SARS-CoV2 test osutub positiivseks, algab isolatsioon testi tegemise päevast algusest peale ning kestab 10 päeva.
+  text4: |    
+    <strong>Terviseamet soovitab kõigil lähikontaktsetel 10. päeval teha ka RT-PCR SARS-CoV2 test, et välistada asümptomaatilist nakatumist.</strong><br/>
+    * Kui isolatsiooniperioodil tekivad COVID-19 haigusele iseloomulikud sümptomid, tuleb isikul teavitada perearstikeskust ning ta suunatakse SARS-CoV2 testile.<br/> ** Kui tehtud SARS-CoV2 test osutub positiivseks, algab isolatsioon testi tegemise päevast algusest peale ning vähemalt kestab 10 päeva.
 
-# (2.1a.2) Close Contact, in active contact and positive person is asymptomatic
-q2_1a_2:
+# (2.2.2.1.2) Close Contact, in active contact and positive person is asymptomatic
+q2_2_2_1_2:
   question: Mis kuupäeval lähikontaktsega koos elav asümptomaatiline SARS-CoV2 positiivne testi tegi?
   answer_prefix: |
-    Esimene võimalus lähikontaktsele SARS-CoV2 testi teha, et isolatsiooni lühendada*:
+    Viimane isolatsioonipäev (kaasa arvatud):
   text: Lähikontaktsega koos elava SARS-CoV2 positiivse testi tegemisest on möödas vähemalt 10 päeva. Testi tegemise päeva loetakse päevaks 0
   text2: | 
     Viimane isolatsioonipäev lähikontaktsele, kui testi ei tehta ja sümptomeid ei ole tekkinud:
   text3: |
       Lähikontaktsega koos elava asümptomaatilise SARS-CoV2 positiivse testi tegemisest on möödas 14 päeva. Testi tegemise päeva loetakse päevaks 0.
   text4: |    
-    * Kui tehtud SARS-CoV2 test osutub positiivseks, algab isolatsioon testi tegemise päevast algusest peale ning kestab 10 päeva.
+    <strong>Terviseamet soovitab kõigil lähikontaktsetel 10. päeval teha ka RT-PCR SARS-CoV2 test, et välistada asümptomaatilist nakatumist.</strong><br/>
+    * Kui isolatsiooniperioodil tekivad COVID-19 haigusele iseloomulikud sümptomid, tuleb isikul teavitada perearstikeskust ning ta suunatakse SARS-CoV2 testile.<br/> ** Kui tehtud SARS-CoV2 test osutub positiivseks, algab isolatsioon testi tegemise päevast algusest peale ning vähemalt kestab 10 päeva.
 
-# (2.1b) Close Contact, in inactive contact 
-q2_1b:
-  question: Mis kuupäeval lähikontaktne viimast korda SARS-CoV2 positiivsega kokku puutus?
-  answer_prefix: |
-    Esimene võimalus ilma sümptomiteta lähikontaktsele SARS-CoV2 testi teha, et isolatsiooni lühendada*:
-  text: 10 päeva alates viimasest kontaktist. Viimast kontaktipäeva loetakse päevaks 0.
-  text2: |
-    Viimane isolatsioonipäev lähikontaktsele, kui testi ei tehta ja sümptomeid ei ole tekkinud:
-  text3: 14 päeva alates viimasest kontaktist. Viimast kontaktipäeva loetakse päevaks 0.
-  text4: |
-    * Kui tehtud SARS-CoV2 test osutub positiivseks, algab isolatsioon testi tegemise päevast algusest peale ning kestab 10 päeva.
