@@ -544,33 +544,10 @@ export default function PageLayout({ content, locale }) {
                 />
               </div>
               <hr className="my-8 max-w-3xl mx-auto" />
-              <div>
+
                 <p
-                  className="text-lg text-center"
                   dangerouslySetInnerHTML={{ __html: content.q2_2_2_1_1.text2 }}
                 />
-                <div className="mb-8">
-                  <p className="text-lg text-center">
-                    <span className="my-3 text-red-500 font-bold inline-block text-2xl border-red-400 bg-red-50 px-4 py-2 ring-1 ring-red-100 rounded-sm">
-                      {format(
-                        add(startDate, {
-                          days: 14,
-                        }),
-                        "dd.MM.yyyy"
-                      )}
-                    </span>
-                  </p>
-                  <p
-                    className="text-gray-500 text-sm text-center max-w-3xl mx-auto pt-3"
-                    dangerouslySetInnerHTML={{
-                      __html: content.q2_2_2_1_1.text3,
-                    }}
-                  />
-                </div>
-              </div>
-              <p
-                dangerouslySetInnerHTML={{ __html: content.q2_2_2_1_1.text4 }}
-              />
             </div>
           ) : (
             ""
@@ -622,26 +599,8 @@ export default function PageLayout({ content, locale }) {
               </div>
               <hr className="my-8 max-w-3xl mx-auto" />
 
-              <div className="mb-8">
-                <p className="text-lg text-center">
-                  {content.q2_2_2_1_2.text2}
-                  <br />
-                  <span className="my-3 text-red-500 font-bold inline-block text-2xl border-red-400 bg-red-50 px-4 py-2 ring-1 ring-red-100 rounded-sm">
-                    {format(
-                      add(startDate, {
-                        days: 14,
-                      }),
-                      "dd.MM.yyyy"
-                    )}
-                  </span>
-                </p>
-                <p
-                  className="text-gray-500 text-sm text-center max-w-3xl mx-auto pt-3"
-                  dangerouslySetInnerHTML={{ __html: content.q2_2_2_1_2.text3 }}
-                />
-              </div>
               <p
-                dangerouslySetInnerHTML={{ __html: content.q2_2_2_1_2.text4 }}
+                dangerouslySetInnerHTML={{ __html: content.q2_2_2_1_2.text2 }}
               />
             </div>
           ) : (
@@ -690,25 +649,7 @@ export default function PageLayout({ content, locale }) {
                 />
               </div>
               <hr className="my-8 max-w-3xl mx-auto" />
-              <div className="mb-8">
-                <p className="text-lg text-center">
-                  {content.q2_2_2_2.text2}
-                  <br />
-                  <span className="my-3 text-red-500 font-bold inline-block text-2xl border-red-400 bg-red-50 px-4 py-2 ring-1 ring-red-100 rounded-sm">
-                    {format(
-                      add(startDate, {
-                        days: 14,
-                      }),
-                      "dd.MM.yyyy"
-                    )}
-                  </span>
-                </p>
-                <p
-                  className="text-gray-500 text-sm text-center max-w-3xl mx-auto pt-3"
-                  dangerouslySetInnerHTML={{ __html: content.q2_2_2_2.text3 }}
-                />
-              </div>
-              <p dangerouslySetInnerHTML={{ __html: content.q2_2_2_2.text4 }} />
+              <p dangerouslySetInnerHTML={{ __html: content.q2_2_2_2.text2 }} />
             </div>
           ) : (
             ""
