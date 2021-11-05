@@ -55,7 +55,7 @@ q2_2:
   question: Kas lähikontaktne isik on <strong>täielikult</strong> vaktsineeritud mõne SARS-CoV2 vaktsiiniga?
   button_yes: Vaktsineeritud
   button_no: Mittevaktsineeritud
-  text: Täielikult vaktsineerituteks loetakse:<br/> 1. <strong>Pfizer/BioNTech COMIRNATY</strong> - alates 7. päevast pärast II vaktsiinidoosi manustamist.<br/> 2. <strong>Moderna SPIKEVAX</strong> - alates 14. päevast pärast II vaktsiinidoosi manustamist.<br/> <br/> 3. <strong>AstraZeneca VAXZEVRIA</strong> - alates 15. päevast pärast II vaktsiinidoosi manustamist.<br/> <br/> 4. <strong>COVID-19 Vaccine JANNSEN</strong> - alates 14. päevast pärast II vaktsiinidoosi manustamist.<br/> <br/> Poolelioleva vaktsineerimisega inimest loetakse võrdsustatuks mittevaktsineerituga.
+  text: Täielikult vaktsineerituteks loetakse:<br/><br/> 1. <strong>Pfizer/BioNTech COMIRNATY</strong> - alates 7. päevast pärast II vaktsiinidoosi manustamist.<br/> 2. <strong>Moderna SPIKEVAX</strong> - alates 14. päevast pärast II vaktsiinidoosi manustamist.<br/> 3. <strong>AstraZeneca VAXZEVRIA</strong> - alates 15. päevast pärast II vaktsiinidoosi manustamist.<br/> 4. <strong>COVID-19 Vaccine JANNSEN</strong> - alates 14. päevast pärast II vaktsiinidoosi manustamist.<br/> <br/> Poolelioleva vaktsineerimisega inimest loetakse võrdsustatuks mittevaktsineerituga.
 
 # (2.2.1) Close Contact has given negative test (NO) and vaccinated
 q2_2_1:
