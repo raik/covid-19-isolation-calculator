@@ -62,8 +62,8 @@ export default function PageLayout({ content, locale }) {
           dangerouslySetInnerHTML={{ __html: content.hero }}
         />
         {locale === "et" ? (
-          <p className="text-red-50 font-bold max-w-2xl text-center mx-auto mb-10 bg-green-600 shadow-sm rounded-md py-4 px-4">
-            Rakendus on uuendatud ning vastab 29.01.2021 kehtima hakanud
+          <p className="text-red-50 font-bold max-w-2xl text-center mx-auto mb-10 bg-red-600 shadow-sm rounded-md py-4 px-4">
+            Rakendus on uuendamisel ning hetkel ei vasta 07.01.2021 kehtima hakanud
             reeglitele.
           </p>
         ) : (
