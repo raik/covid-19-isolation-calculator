@@ -9,7 +9,7 @@ select_date: |
 # (1) First Step 
 q1:
   question: Kas inimene on SARS-CoV2 positiivne või SARS-CoV2 positiivse lähikontaktne?
-   text: Testi all on mõeldud RT-PCR testi. Antigeeni kiirtest tuleb alati kinnitada RT-PCR testiga.
+  text: Testi all on mõeldud RT-PCR testi. Antigeeni kiirtest tuleb alati kinnitada RT-PCR testiga.
   button_positive: POSITIIVNE
   button_closecontact: LÄHIKONTAKTNE
 
@@ -47,7 +47,7 @@ q2:
 # (2.1) Close Contact has given positive test (YES)
 q2_1:
   text: Kui viimase 180 päeva jooksul on isik andnud positiivse SARS-CoV2 testi ning esmane isolatsiooniaeg on möödas, siis lähikontaktsena isolatsioonikohustust ei ole.
-  <strong>Kui läbi põdemine toimus rohkem kui 45 päeva tagasi ning tegu on peresisese kontaktiga, on <span class="underline">tugevalt soovituslik</span> ka nendel lähikontaktsetel 5 päeva karantiinis püsida. Kui selle perioodi jooksul tekivad iseloomulikud sümptomid, võib inimese suunata RT-PCR SARS-CoV2 testile. Jääkpositiivsus sellisel juhul on äärmiselt ebatõenäoline ja positiivne test näitab kordusnakatumist</strong><br/>
+    <strong>Kui läbi põdemine toimus rohkem kui 45 päeva tagasi ning tegu on peresisese kontaktiga, on <span class="underline">tugevalt soovituslik</span> ka nendel lähikontaktsetel 5 päeva karantiinis püsida. Kui selle perioodi jooksul tekivad iseloomulikud sümptomid, võib inimese suunata RT-PCR SARS-CoV2 testile. Jääkpositiivsus sellisel juhul on äärmiselt ebatõenäoline ja positiivne test näitab kordusnakatumist</strong><br/>
   text2: | 
     Kui positiivset RT-PCR testist on <strong>möödas rohkem kui 180 päeva, siis võrdsustatakse isik mittepõdenenuga</strong> ning kehtivad kõik lähikontaktsetele kehtestatud karantiinireeglid. <br/><br/>
     * COVID-19 haiguse põdemise tõenduseks peab diagnoos olema kinnitatud SARS-CoV2 RT-PCR positiivse testiga. Antikehade testi positiivne tulemus pole usaldusväärne tõend läbipõdemise kohta ja ei vabasta edasistest piirangutest.
@@ -61,8 +61,9 @@ q2_2:
 
 # (2.2.1) Close Contact has given negative test (NO) and vaccinated
 q2_2_1:
-  text: Kui isik on täielikult vaktsineeritud, siis lähikontaktsena karantiinikohustust ei ole.
-  <strong>Kui tegemist on peresisese kontaktiga, siis on <span class="underline">tugevalt soovituslik</span> ka nendel lähikontaktsetel 5 päeva karantiinis püsida.</strong><br/>
+  text: |
+    Kui isik on täielikult vaktsineeritud, siis lähikontaktsena karantiinikohustust ei ole.
+    <strong>Kui tegemist on peresisese kontaktiga, siis on <span class="underline">tugevalt soovituslik</span> ka nendel lähikontaktsetel 5 päeva karantiinis püsida.</strong><br/>
   
   text2: COVID-19 haigusele iseloomulike sümptomite tekkel tuleb isikul teavitada perearstikeskust ning ta suunatakse SARS-CoV2 testile. Isik peab jääma isolatsiooni kuni negatiivse vastuse saabumiseni. Positiivse vastuse korral on tegemist COVID-19 nakatumisega.
 
