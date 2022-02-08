@@ -8,10 +8,10 @@ select_date: |
  
 # (1) First Step 
 q1:
-  question: koroonapositiivne või lähikontaktne?
+  question: Koroonapositiivne või lähikontaktne?
   button_positive: POSITIIVNE
   button_closecontact: LÄHIKONTAKTNE
- 
+  text: Koroonapositiivseks loetakse <strong>koduse antigeeni kiirtesti, laboratoorset RT-PCR testi. </strong> Siia kuuluvad ka need inimesed, kellel on lähikontaktse karantiini ajal haigusele iseloomulikud sümptomid tekkinud - siis ei ole vaja ühtegi testi teha.<br/> 
 
 # (1.1) Positive
 q1_1:
