@@ -2,8 +2,6 @@ title: Covid-19 isolatsioonikalkulaator
 hero: |
     Eesti Perearstide Seltsi <br /> <span class="text-blue-600 uppercase text-2xl"> SARS-CoV2 isolatsioonikalkulaator </span>
 description: Kalkulaator on abistav vahend, et arvutada välja esimesed võimalikud isolatsiooni ja karantiini lõpetamise kuupäevad. Isolatsiooni lõpetamiseks peavad olema lisaks täidetud kõik Terviseameti poolt kinnitatud kehtivad kriteeriumid.
-Kodune positiivne antigeeni kiirtest vajab PCR testiga kinnitust ainult juhul, kui vajalik on Euroopa Liidu COVID-19 läbipõdemistõendi genereerimine. Kordustesti paranemise kinnitamiseks ei teostata ühelgi juhul.
-Vaata Eesti Perearstide Seltsi [täiskasvanute koduse ravi soovitusi siit](https://www.perearstiselts.ee/patsient/koduse-ravi-juhend-taeiskasvanutele) ja [laste koduse ravi nõuandeid siit](https://www.perearstiselts.ee/patsient/juhend-lapsevanemale-aegeda-haigusega-lapse-koduseks-raviks-covid-19-pandeemia-ajal).
 or: või
 select_date: |
   Vali kuupäev:
@@ -66,11 +64,10 @@ q2_2_1:
     Kui isik on täielikult vaktsineeritud, siis lähikontaktsena karantiinikohustust ei ole.
     <strong>Kui tegemist on peresisese kontaktiga, siis on <span class="underline">tugevalt soovituslik</span> ka nendel lähikontaktsetel 5 päeva karantiinis püsida.</strong><br/>
   
-  text2: COVID-19 haigusele iseloomulike sümptomite tekkel tuleb teha kodune antigeeni kiirtest, RT-PCR test ja/või teavitada perearstikeskust sümptomite tekkest. Kui test on positiivne või perearstikeskus diagnoosib haiguse epidemioloogilise seose alusel, tuleb jääda isolatsiooni järgides 
-
+  text2: Kui isolatsiooni ajal tekivad COVID-19 haigusele iseloomulikud sümptomid, siis võib diagnoosida COVID-19 haigust epidemioloogilise seose alusel. Diagnoosi võib, aga ei pea kinnitama antigeeni või PCR testiga. Isolatsioon algab uuesti sümptomite esimesest päevast - läbige kalkulaator uuesti mööda "koroonapositiivse" rada. 
 # (2.2.2) Close Contact has given negative test (NO) and not vaccinated
 q2_2_2:
-  question: Kas lähikontaktne elab SARS-CoV2 positiivsega samas majapidamises?
+  question: Kas lähikontaktne elab SARS-CoV2 positiivsega samas majapidamises?11
   button_yes: Jah
   button_no: Ei
   button_yes_helper: Elatakse haigega igapäevaselt koos
@@ -78,13 +75,12 @@ q2_2_2:
 
 # (2.2.2.2) Close Contact has given negative test (NO) and not vaccinated, not active contact
 q2_2_2_2:
-  question: Mis kuupäeval lähikontaktne viimati SARS-CoV2 positiivsega kokku puutus?
+  question: Mis kuupäeval lähikontaktne viimati koroonapositiivsega kokku puutus?
   answer_prefix: |
     Viimane karantiinipäev (kaasa arvatud):
   text: 7 päeva alates viimasest kontaktist. Viimast kontaktipäeva loetakse päevaks 0.
   text2: |    
-    <strong>Lähikontaktne suunatakse SARS-CoV2 RT-PCR testile ainult siis, kui tal tekivad sümptomid. Asümptomaatilisi inimesi testile ei suunata.</strong><br/>
-    * Kui karantiiniperioodil tekivad COVID-19 haigusele iseloomulikud sümptomid, tuleb teavitada perearstikeskust ning ta suunatakse SARS-CoV2 testile.<br/> ** Kui tehtud SARS-CoV2 test osutub positiivseks, algab isolatsioon testi tegemise päevast algusest peale ning vähemalt kestab 10 päeva.
+    *Kui isolatsiooni ajal tekivad COVID-19 haigusele iseloomulikud sümptomid, siis võib diagnoosida COVID-19 haigust epidemioloogilise seose alusel. Diagnoosi võib, aga ei pea kinnitama antigeeni või PCR testiga. Isolatsioon algab uuesti sümptomite esimesest päevast - läbige kalkulaator uuesti mööda "koroonapositiivse" rada.
 
 # (2.2.2.1) Close Contact has given negative test (NO) and not vaccinated, active contact
 q2_2_2_1:
@@ -99,9 +95,8 @@ q2_2_2_1_1:
     Viimane karantiinipäev (kaasa arvatud):
   text: Vähemalt 7 päeva möödas esimesest kontaktist - samas majapidamises elavate inimeste puhul on esimene kontakt tavaliselt COVID-19 haige esimene sümptomipäev. Esimest kontaktipäeva loetakse päevaks 0
   text2: |    
-    <strong>Lähikontaktne suunatakse SARS-CoV2 RT-PCR testile ainult siis, kui tal tekivad sümptomid. Asümptomaatilisi inimesi testile ei suunata.</strong><br/>
-    * Kui karantiiniperioodil tekivad COVID-19 haigusele iseloomulikud sümptomid, tuleb isikul teavitada perearstikeskust ning ta suunatakse SARS-CoV2 testile.<br/> ** Kui tehtud SARS-CoV2 test osutub positiivseks, algab isolatsioon testi tegemise päevast algusest peale ning vähemalt kestab 10 päeva.
-
+    * Kui isolatsiooni ajal tekivad COVID-19 haigusele iseloomulikud sümptomid, siis võib diagnoosida COVID-19 haigust epidemioloogilise seose alusel. Diagnoosi võib, aga ei pea kinnitama antigeeni või PCR testiga. Isolatsioon algab uuesti sümptomite esimesest päevast - läbige kalkulaator uuesti mööda "koroonapositiivse" rada.
+    
 # (2.2.2.1.2) Close Contact, in active contact and positive person is asymptomatic
 q2_2_2_1_2:
   question: Mis kuupäeval lähikontaktsega koos elav asümptomaatiline SARS-CoV2 positiivne testi tegi?
@@ -109,5 +104,5 @@ q2_2_2_1_2:
     Viimane karantiinipäev (kaasa arvatud):
   text: Lähikontaktsega koos elava SARS-CoV2 positiivse testi tegemisest on möödas vähemalt 7 päeva. Testi tegemise päeva loetakse päevaks 0
   text2: |    
-   <strong>Lähikontaktne suunatakse SARS-CoV2 RT-PCR testile ainult siis, kui tal tekivad sümptomid. Asümptomaatilisi inimesi testile ei suunata.</strong><br/> <br/>
-    * Kui karantiiniperioodil tekivad COVID-19 haigusele iseloomulikud sümptomid, tuleb isikul teavitada perearstikeskust ning ta suunatakse SARS-CoV2 testile.<br/> ** Kui tehtud SARS-CoV2 test osutub positiivseks, algab isolatsioon testi tegemise päevast algusest peale ning vähemalt kestab 10 päeva.
+    * Kui isolatsiooni ajal tekivad COVID-19 haigusele iseloomulikud sümptomid, siis võib diagnoosida COVID-19 haigust epidemioloogilise seose alusel. Diagnoosi võib, aga ei pea kinnitama antigeeni või PCR testiga. Isolatsioon algab uuesti sümptomite esimesest päevast - läbige kalkulaator uuesti mööda "koroonapositiivse" rada.
+    
