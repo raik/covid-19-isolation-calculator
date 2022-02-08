@@ -11,7 +11,7 @@ q1:
   question: Koroonapositiivne või lähikontaktne?
   button_positive: POSITIIVNE
   button_closecontact: LÄHIKONTAKTNE
-  text: Koroonapositiivseks loetakse <strong>koduse antigeeni kiirtesti, laboratoorset RT-PCR testi. </strong> Siia kuuluvad ka need inimesed, kellel on lähikontaktse karantiini ajal haigusele iseloomulikud sümptomid tekkinud - siis ei ole vaja ühtegi testi teha.<br/> 
+  button_yes_helper: Koroonapositiivseks loetakse inimest, kes on andnud positiivse <strong>koduse antigeeni kiirtesti või laboratoorse RT-PCR testi. </strong> Siia kuuluvad ka need inimesed, kellel on lähikontaktse karantiini ajal haigusele iseloomulikud sümptomid tekkinud - siis ei ole vaja ühtegi testi teha. 
 
 # (1.1) Positive
 q1_1:
@@ -21,37 +21,37 @@ q1_1:
 
 # (1.1.1) Positive and symptomatic
 q1_1_1:
-  question: Millal oli esimeste sümptomite tekkimise kuupäev?
+  question: Mis kuupäeval esimesed sümptomid tekkisid?
   answer_prefix: |
-    Viimane isolatsioonipäev (kaasa arvatud):
+    Viimane isolatsioonipäev on (kaasa arvatud):
   text: COVID-19-le iseloomulike sümptomite algusest on möödunud vähemalt 10 päeva. Sümptomite tekkepäev on päev 0.
   text2: |
-    * Isolatsiooni võib lõpetada ainult siis, kui lisaks ajalistele kriteeriumitele on viimasest palavikust on möödas 72 tundi ja ägedad sümptomid on taandunud. <strong> Isolatsiooni lõpetab tervishoiutöötaja. </strong> <strong>Kordustesti paranemise kinnitamiseks ei teostata ühelgi juhul.</strong>
+    * Isolatsiooni võib lõpetada ainult siis, kui lisaks on viimasest palavikust möödas vähemalt 24 tundi ja ägedad sümptomid on taandumas. Köha, nohu, lõhna- ja maitsehäired võivad püsida veel pikalt. <strong>Kordustesti paranemise kinnitamiseks ei teostata ühelgi juhul.</strong>
 
 # (1.1.2) Positive and asymptomatic 
 q1_1_2: 
-  question: Mis kuupäeval RT-PCR SARS-CoV2 test tehti?
+  question: Mis kuupäeval kas antigeeni kiirtest või RT-PCR test tehti? (Kui tehtud on mõlemad, siis mõeldakse esimest, mis oli positiivne)
   answer_prefix: |
     Viimane isolatsioonipäev (kaasa arvatud):
   text: Kui haigusnähte pole ilmnenud, lõpetatakse isolatsioon 10 päeva möödumisel alates positiivsest testist. Testi tegemise päeva loetakse päevaks 0.
   text2: |
-    * Isolatsiooni võib lõpetada ainult siis, kui sümptomeid ei ole tekkinud. <strong> Isolatsiooni lõpetab tervishoiutöötaja. </strong> Kui isolatsiooni ajal tekivad sümptomid, algab isolatsioonipäevade arvestamine algusest – sümptomite tekke päev on päev 0, isolatsioon kestab 10 päeva ning viimasest palavikust on möödas 72 tundi ja ägedad sümptomid on taandunud. <strong>Kordustesti paranemise kinnitamiseks ei teostata ühelgi juhul.</strong>
+    * Isolatsiooni võib lõpetada ainult siis, kui sümptomeid ei ole tekkinud. Kui isolatsiooni ajal tekivad sümptomid, algab isolatsioonipäevade arvestamine algusest – sümptomite tekke päev on päev 0, isolatsioon kestab 10 päeva ning viimasest palavikust on möödas 24 tundi ja ägedad sümptomid on taandunud. Köha, nohu, lõhna- ja maitsetaju häired võivad veel pikalt püsida. <strong>Kordustesti paranemise kinnitamiseks ei teostata ühelgi juhul.</strong>
 
 
 # (2) Close Contact
 q2:
-  question: Kas viimase 180 päeva jooksul on lähikontaktsel mõni RT-PCR SARS-CoV2 proov positiivne olnud?
+  question: Kas viimase 180 päeva jooksul on lähikontaktsel koroonaviirust diagnoositud?
   button_yes: Jah
   button_no: Ei
 
 # (2.1) Close Contact has given positive test (YES)
 q2_1:
-  text: Kui viimase 180 päeva jooksul on isik andnud positiivse SARS-CoV2 testi ning esmane isolatsiooniaeg on möödas, siis lähikontaktsena isolatsioonikohustust ei ole.
+  text: Kui viimase 180 päeva jooksul on antud positiivne SARS-CoV2 antigeeni või RT-PCR test või muul moel koroonaviirust diagnoositud ning esmane isolatsiooniaeg on möödas, siis lähikontaktsena isolatsioonikohustust ei ole.
     <strong>Kui läbi põdemine toimus rohkem kui 45 päeva tagasi ning tegu on peresisese kontaktiga, on <span class="underline">tugevalt soovituslik</span> ka nendel lähikontaktsetel 5 päeva karantiinis püsida. Kui selle perioodi jooksul tekivad iseloomulikud sümptomid, võib inimese suunata RT-PCR SARS-CoV2 testile. Jääkpositiivsus sellisel juhul on äärmiselt ebatõenäoline ja positiivne test näitab kordusnakatumist</strong><br/>
   text2: | 
-    Kui positiivset RT-PCR testist on <strong>möödas rohkem kui 180 päeva, siis võrdsustatakse lähikontaktne mittepõdenenuga</strong> ning kehtivad kõik lähikontaktsetele kehtestatud karantiinireeglid. <br/><br/>
-    * COVID-19 haiguse põdemise tõenduseks peab diagnoos olema kinnitatud SARS-CoV2 RT-PCR positiivse testiga. Antikehade testi positiivne tulemus pole usaldusväärne tõend läbipõdemise kohta ja ei vabasta edasistest piirangutest.
-
+    Kui põdemisest on <strong>möödas rohkem kui 180 päeva ja vaktsiini tehtud ei ole, siis võrdsustatakse lähikontaktne mittepõdenenuga</strong> ning kehtivad kõik lähikontaktsetele kehtestatud karantiinireeglid. <br/><br/>
+    * COVID-19 Euroopa Liidus kehtiva läbipõdemise tõendi saamiseks peab olema digiloos RT-PCR SARS-CoV2 positiivne vastus.
+    
 # (2.2) Close Contact has given negative test (NO)
 q2_2:
   question: Kas lähikontaktne on <strong>täielikult</strong> vaktsineeritud mõne SARS-CoV2 vaktsiiniga?
@@ -64,7 +64,7 @@ q2_2_1:
   text: |
     Kui isik on täielikult vaktsineeritud, siis lähikontaktsena karantiinikohustust ei ole.
     <strong>Kui tegemist on peresisese kontaktiga, siis on <span class="underline">tugevalt soovituslik</span> ka nendel lähikontaktsetel 5 päeva karantiinis püsida.</strong><br/>
-  
+  1111
   text2: COVID-19 haigusele iseloomulike sümptomite tekkel tuleb teavitada perearstikeskust ning ta suunatakse SARS-CoV2 testile. Isolatsiooni peab jääma kuni negatiivse vastuse saabumiseni. Positiivse vastuse korral on tegemist COVID-19 nakatumisega.
 
 # (2.2.2) Close Contact has given negative test (NO) and not vaccinated
