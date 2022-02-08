@@ -8,10 +8,11 @@ select_date: |
  
 # (1) First Step 
 q1:
-  question: SARS-CoV2 positiivne või SARS-CoV2 positiivse lähikontaktne?
+  question: koroonapositiivne või koroonapositiivse lähikontaktne?
   text: Testi all on mõeldud RT-PCR testi. Antigeeni kiirtest tuleb kinnitada RT-PCR testiga.
   button_positive: POSITIIVNE
   button_closecontact: LÄHIKONTAKTNE
+  text: Koroonatest võib olla nii kodune antigeeni kiirtest ku.
 
 # (1.1) Positive
 q1_1:
