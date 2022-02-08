@@ -2,8 +2,8 @@ title: Covid-19 isolatsioonikalkulaator
 hero: |
     Eesti Perearstide Seltsi <br /> <span class="text-blue-600 uppercase text-2xl"> SARS-CoV2 isolatsioonikalkulaator </span>
 description: Kalkulaator on abistav vahend, et arvutada välja esimesed võimalikud isolatsiooni ja karantiini lõpetamise kuupäevad. Isolatsiooni lõpetamiseks peavad olema lisaks täidetud kõik Terviseameti poolt kinnitatud kehtivad kriteeriumid.
-text: Kodune positiivne antigeeni kiirtest vajab PCR testiga kinnitust ainult juhul, kui vajalik on Euroopa Liidu COVID-19 läbipõdemistõendi genereerimine. Kordustesti paranemise kinnitamiseks ei teostata ühelgi juhul.
-text2: |Vaata Eesti Perearstide Seltsi [täiskasvanute koduse ravi soovitusi siit](https://www.perearstiselts.ee/patsient/koduse-ravi-juhend-taeiskasvanutele) ja [laste koduse ravi nõuandeid siit](https://www.perearstiselts.ee/patsient/juhend-lapsevanemale-aegeda-haigusega-lapse-koduseks-raviks-covid-19-pandeemia-ajal).
+Kodune positiivne antigeeni kiirtest vajab PCR testiga kinnitust ainult juhul, kui vajalik on Euroopa Liidu COVID-19 läbipõdemistõendi genereerimine. Kordustesti paranemise kinnitamiseks ei teostata ühelgi juhul.
+Vaata Eesti Perearstide Seltsi [täiskasvanute koduse ravi soovitusi siit](https://www.perearstiselts.ee/patsient/koduse-ravi-juhend-taeiskasvanutele) ja [laste koduse ravi nõuandeid siit](https://www.perearstiselts.ee/patsient/juhend-lapsevanemale-aegeda-haigusega-lapse-koduseks-raviks-covid-19-pandeemia-ajal).
 or: või
 select_date: |
   Vali kuupäev:
