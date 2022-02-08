@@ -12,7 +12,7 @@ q1:
   text: Testi all on mõeldud RT-PCR testi. Antigeeni kiirtest tuleb kinnitada RT-PCR testiga.
   button_positive: POSITIIVNE
   button_closecontact: LÄHIKONTAKTNE
-  text: Koroonatest võib olla nii kodune antigeeni kiirtest ku.
+  text: Koroonatest võib olla nii kodune antigeeni kiirtest kui ka laboratoorne RT-PCR test.
 
 # (1.1) Positive
 q1_1:
