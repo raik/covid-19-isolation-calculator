@@ -55,20 +55,14 @@ export default function PageLayout({ content, locale }) {
         <title>{content.title}</title>
       </Head>
 
-      <main className="max-w-6xl mx-auto px-8 py-12">
-        {/* <LanguagePicker locale={locale} /> */}
-        <h1
-          className="text-4xl text-center font-bold leading-none mb-10"
-          dangerouslySetInnerHTML={{ __html: content.hero }}
-        />
-        {locale === "et" ? (
-          <p className="text-red-50 font-bold max-w-2xl text-center mx-auto mb-10 bg-green-600 shadow-sm rounded-md py-4 px-4">
-            Rakendus on uuendatud ning vastab 07.01.2022 kehtima hakanud
-            reeglitele.
-          </p>
-        ) : (
-          <p className="text-red-50 font-bold max-w-2xl text-center mx-auto mb-10 bg-red-600 shadow-sm rounded-md py-4 px-4">
-            {/* Приложение обновляется и не соответствует новым требованиям от
+      {locale === "et" ? (
+        <p className="text-green-50 font-bold text-center mx-auto bg-green-600 shadow-sm py-2 px-4 text-sm">
+          Rakendus on uuendatud ning vastab 07.01.2022 kehtima hakanud
+          reeglitele.
+        </p>
+      ) : (
+        <p className="text-red-50 font-bold max-w-2xl text-center mx-auto mb-10 bg-red-600 shadow-sm rounded-md py-4 px-4">
+          {/* Приложение обновляется и не соответствует новым требованиям от
             29.01.2021.{" "}
             <a
               className="underline"
@@ -76,11 +70,48 @@ export default function PageLayout({ content, locale }) {
             >
               О новых требованиях можно узнать на странице kriis.ee.
             </a> */}
-          </p>
-        )}
+        </p>
+      )}
+      <main className="max-w-6xl mx-auto px-8 py-12">
+        {/* <LanguagePicker locale={locale} /> */}
+        <h1
+          className="text-4xl text-center font-bold leading-none mb-10"
+          dangerouslySetInnerHTML={{ __html: content.hero }}
+        />
 
         <div className="prose prose-xl max-w-none mb-12 text-center leading-normal">
           <p>{content.description}</p>
+        </div>
+
+        <div className="relative text-blue-50 mx-auto mb-10 bg-blue-600 shadow-sm rounded-md py-4 px-6">
+          <p className="font-bold uppercase text-lg mb-4">Info ja Viited</p>
+          <ul className="list-inside list-disc">
+            <li>
+              <a
+                className="underline"
+                target="_blank"
+                href="https://www.perearstiselts.ee/patsient/koduse-ravi-juhend-taeiskasvanutele"
+              >
+                Koduse ravi juhend täiskasvanutele
+              </a>
+            </li>
+            <li>
+              <a
+                className="underline"
+                target="_blank"
+                href=" https://www.perearstiselts.ee/patsient/juhend-lapsevanemale-aegeda-haigusega-lapse-koduseks-raviks-covid-19-pandeemia-ajal"
+              >
+                Koduse ravi juhend lastele
+              </a>
+            </li>
+            <li>
+              Korralduslike küsimuste osas helista 1247 või loe lähemalt{" "}
+              <a className="underline" target="_blank" href="https://kriis.ee">
+                kriis.ee veebilehelt
+              </a>
+            </li>
+            <li>Käsimüügiravimite osas pidage nõu apteekriga</li>
+          </ul>
         </div>
 
         {/* (1) First Step */}
