@@ -57,7 +57,7 @@ export default function PageLayout({ content, locale }) {
       <div>
         {locale === "et" ? (
           <p className="text-green-50 font-bold text-center mx-auto bg-green-600 shadow-sm py-2 px-4 text-sm">
-            Rakendus on uuendatud ning vastab 07.01.2022 kehtima hakanud
+            Rakendus on uuendatud ning vastab 01.07.2022 kehtima hakanud
             reeglitele.
           </p>
         ) : (
@@ -226,7 +226,7 @@ export default function PageLayout({ content, locale }) {
                       <span className="my-3 text-red-500 font-bold inline-block text-2xl border-red-400 bg-red-50 px-4 py-2 ring-1 ring-red-100 rounded-sm">
                         {format(
                           add(startDate, {
-                            days: 10,
+                            days: 5,
                           }),
                           "dd.MM.yyyy"
                         )}
@@ -276,7 +276,7 @@ export default function PageLayout({ content, locale }) {
                       <span className="my-3 text-red-500 font-bold inline-block text-2xl border-red-400 bg-red-50 px-4 py-2 ring-1 ring-red-100 rounded-sm">
                         {format(
                           add(startDate, {
-                            days: 10,
+                            days: 5,
                           }),
                           "dd.MM.yyyy"
                         )}
@@ -573,7 +573,7 @@ export default function PageLayout({ content, locale }) {
                     <span className="my-3 text-red-500 font-bold inline-block text-2xl border-red-400 bg-red-50 px-4 py-2 ring-1 ring-red-100 rounded-sm">
                       {format(
                         add(startDate, {
-                          days: 7,
+                          days: 5,
                         }),
                         "dd.MM.yyyy"
                       )}
@@ -629,7 +629,7 @@ export default function PageLayout({ content, locale }) {
                     <span className="my-3 text-red-500 font-bold inline-block text-2xl border-red-400 bg-red-50 px-4 py-2 ring-1 ring-red-100 rounded-sm">
                       {format(
                         add(startDate, {
-                          days: 7,
+                          days: 5,
                         }),
                         "dd.MM.yyyy"
                       )}
@@ -682,7 +682,7 @@ export default function PageLayout({ content, locale }) {
                     <span className="my-3 text-red-500 font-bold inline-block text-2xl border-red-400 bg-red-50 px-4 py-2 ring-1 ring-red-100 rounded-sm">
                       {format(
                         add(startDate, {
-                          days: 7,
+                          days: 5,
                         }),
                         "dd.MM.yyyy"
                       )}
